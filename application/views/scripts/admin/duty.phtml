@@ -1,0 +1,34 @@
+<?php
+    $this->headScript()->appendFile('/disciples/js/admin.js');
+?>
+<div class="back-button-container">
+    <button onclick="location.href='/disciples'" class="black-button"><span>back</span></button>
+</div>
+<div class="inner-right">
+    <h1>Managing Duty Options</h1>
+    
+    <p>Please click the name in order to change duty name. The display order shown here reflects the order on the menu option.</p>
+    <p class="error">It will not be saved permanently until clicking "apply" button to save your changes.</p>
+    <table id="duty-table">    	
+    	<tr>
+    		<td width="270"><b>직분 이름</b></td>
+    		<td><b>Display Order Change</b></td>
+    	</tr>
+    	<?php foreach ($this->duties as $duty) { ?>
+    	<tr id="<?php echo $duty['id'];?>">    		
+    		<td>
+    			<div class="duty-old"><?php echo $duty['duty_name']; ?></div>
+    			<div class="duty-new hide"><input type="text" name="duty_name" /><span class="button-light change">변경</span></div>
+    		</td>
+    		<td><a class="down">move down</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a class="up">move up</a></td>
+    	</tr>
+    	<?php } ?>
+    	<tr>
+    		<td colspan="2" align="center"><a id="new-duty">새로운 직분</a></td>
+    	</tr>
+    </table>
+    <div class="confirm">
+	    <button class="green-button first" id="apply"><span>apply</span></button>
+	    <button class="black-button" id="cancel"><span>cancel</span></button>
+	</div>
+</div>

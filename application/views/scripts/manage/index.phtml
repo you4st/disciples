@@ -1,0 +1,149 @@
+<?php
+    $this->headScript()->appendFile('/disciples/js/manage.js');
+    $this->headScript()->appendFile('/disciples/js/map.js');
+?>
+<div id="left-col">
+	<div class="name-search">
+		<p>이름으로 검색</p>
+		<input type="text" name="query" />
+		<span class="button-light" id="search-by-name">찾기</span>
+	</div>
+	<hr />
+	<div class="filters">
+		<span>Filter로 검색</span>
+		<span class="button-light" id="filter-reset">초기화</span>
+		<div id="select-group">
+			<select class="options" name="duty-filter">
+				<option value="-1">직분 선택</option>
+				<?php echo $this->dutyOptions; ?>
+			</select>
+			<select class="options" name="head-of-house-filter">
+				<option value="-1">세대주 선택</option>
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</select>
+			<select class="options" name="age-filter">
+				<option value="-1">나이 선택</option>
+				<option value="0">10세 이하</option>
+				<option value="10">10 대</option>
+				<option value="20">20 대</option>
+				<option value="30">30 대</option>
+				<option value="40">40 대</option>
+				<option value="50">50 대</option>
+				<option value="60">60 대</option>
+				<option value="70">70 대</option>
+				<option value="80">70세 이상</option>
+			</select>
+			<select class="options" name="registered-filter">
+				<option value="-1">등록교인 선택</option>
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</select>
+			<select class="options" name="gender-filter">
+				<option value="-1">성별 선택</option>
+				<option value="M">남성</option>
+				<option value="F">여성</option>
+			</select>
+			<select class="options" name="active-filter">
+				<option value="-1">상태 선택</option>
+				<option value="1">활성</option>
+				<option value="0">비활성</option>
+			</select>
+		</div>		 
+	</div>
+</div>
+
+<div id="left-nav" class="fade-in">
+    <img id="left-arrow" src="/disciples/images/icons/arrow-left.png">
+</div>
+
+<div id="middle-col">
+    <div id="sub-menu">
+    	<input type="hidden" id="member-address" value="" />
+    	<?php if ($this->isAdmin) { ?>
+        <span class="button first overlay-link" data="new-member" id="add">ADD</span>
+        <span class="button" id="remove">REMOVE</span>
+        <a class="button" href="/disciples/manage/upload">FILE UPLOAD</a>
+        <?php } ?>        
+    </div>
+    <table class="fixed" id="list">
+        <tr>
+            <th style="width: 30px;"><input type="checkbox" id="select_all"></th>
+            <th style="width: 190px;">이름</th>
+            <th style="width: 60px;">직분</th>
+            <th style="width: 100px;">전화번호(H)</th>
+            <th style="width: 100px;">전화번호(M)</th>
+            <th style="width: 100px;">전화번호(B)</th>
+            <th style="width: 200px;">이메일</th>
+            <th style="width: 280px;">주소</th>
+            <th style="width: 150px;">도시</th>
+            <th style="width: 50px;">주</th>
+            <th style="width: 80px;">우편번호</th>
+        </tr>
+
+<?php
+    foreach ($this->data as $row) {
+    	$name = $row['name'];
+    	if (!empty($row['e_first']) || !empty($row['e_last'])) {
+    		$name .= ' (' . $row['e_last'] . ', ' . $row['e_first'] . ')';
+    	}
+        echo '<tr id="row_' . $row['id'] . '">';
+        echo '<td class="center"><input type="checkbox" name="selected" value="' . $row['id'] . '"></td>';
+        echo '<td>' . $name . '</td>';
+        echo '<td class="center">' . $row['dutyName'] . "</td>";
+        if (!empty($row['home_phone'])) {
+            echo '<td class="center">(' . substr($row['home_phone'], 0, 3) . ') ' . substr($row['home_phone'], 3, 3) . '-' . substr($row['home_phone'], -4) . '</td>';
+        } else {
+            echo '<td class="center">N/A</td>';
+        }
+        if (!empty($row['mobile_phone'])) {
+            echo '<td class="center">(' . substr($row['mobile_phone'], 0, 3) . ') ' . substr($row['mobile_phone'], 3, 3) . '-' . substr($row['mobile_phone'], -4) . '</td>';
+        } else {
+            echo '<td class="center">N/A</td>';
+        }
+        if (!empty($row['business_phone'])) {
+        	echo '<td class="center">(' . substr($row['business_phone'], 0, 3) . ') ' . substr($row['business_phone'], 3, 3) . '-' . substr($row['business_phone'], -4) . '</td>';
+        } else {
+        	echo '<td class="center">N/A</td>';
+        }
+        echo '<td>' . $row['email'] . "</td>";
+        echo '<td>' . $row['street'] . "</td>";
+        echo '<td class="center">' . $row['city'] . "</td>";
+        echo '<td class="center">' . $row['state'] . "</td>";
+        echo '<td class="center">' . $row['zip'] . "</td>";
+        echo '</tr>';
+    }
+?>
+
+    </table>
+</div>
+
+<div id="right-col">
+    <a href="#" id="hide-detail"><img src="/disciples/images/icons/arrow-right.png"></a>
+    <div id="tab-menu">
+        <span class="tab active personal-tab">기본</span>
+        <span class="tab family-tab">가족</span>
+        <span class="tab map-tab">지도</span>
+        <!-- disabled for future
+        <span class="tab struct-tab">조직</span>
+        -->
+    </div>
+    <div id="member-detail">        
+        <div id="personal-tab">
+            <div class="loading-circle"></div>
+        </div>
+        <div id="family-tab" class="hide">
+            <div class="loading-circle"></div>
+        </div>
+        <div id="map-tab" class="hide">
+        	<span class="button-light button-long" id="calc-route">찾아가는 길</span>
+            <div id="map-canvas"></div>
+        
+        </div>
+        <!-- disabled for future 
+        <div id="struct-tab" class="hide">
+            <h5 id="name">STRUCTURE</h5>
+        </div>
+         -->
+    </div>
+</div>

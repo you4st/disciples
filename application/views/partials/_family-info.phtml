@@ -1,0 +1,54 @@
+<?php if ($this->isAdmin) { ?>
+<span class="button-light overlay-link" data="add-family">추가</span>
+    <?php if (count($this->members) > 1) { ?>
+    <span class="button-light overlay-link" data="change-family" param="<?php echo $this->id; ?>">수정</span>
+    <?php } ?>
+<?php } ?>
+<table id="family-info">
+<?php
+    foreach ($this->members as $id => $member) {
+        $birthDate = $member['birth_year'] . "년 " . $member['birth_month'] . '월 ' . $member['birth_day'] . '일';
+        $age = (date("md", date("U", mktime(0, 0, 0, $member['birth_month'], $member['birth_day'], $member['birth_year']))) > date("md")
+                ? ((date("Y") - $member['birth_year']) - 1)
+                : (date("Y") - $member['birth_year']));
+        
+        if ($member['birth_lunar']) {
+            $birthDate .= ' (음력)';
+        } else {
+            $birthDate .= ' (양력)';
+        }
+?>
+    <tr>
+        <td align="center" class="relation<?php echo ($id == $this->id) ? ' head-of-house' : ''; ?>">
+            <b><?php echo $member['relationName'] ? $member['relationName'] : '본인'; ?></b>
+            <?php if ($member['head_of_house']) { ?>
+                <span>(세대주)</span>
+            <?php } ?>
+        </td>
+        <td class="member-info">
+            <b><?php echo $member['name']?></b>
+            <?php 
+                if (!empty($member['e_first'])) {
+                    echo '(' . $member['e_first'] . ' ' . $member['e_middle'] . ' ' . $member['e_last'] . ')';
+                }
+            ?>
+            <br /><br />
+            <span>생일: <?php echo $birthDate?>&nbsp;&nbsp;&nbsp;나이: <?php echo $age; ?></span>
+            <?php 
+                if (!empty($member['mobile_phone'])) {
+                    echo '<br />';
+                    echo '<span>Mobile: ' . '(' . substr($member['mobile_phone'], 0, 3) . ') ' . substr($member['mobile_phone'], 3, 3) . '-' . substr($member['mobile_phone'], -4) . '</span>';
+                }
+            ?>
+            <?php 
+                if (!empty($member['email'])) {
+                    echo '<br />';
+                    echo '<span>Email: ' . $member['email'] . '</span>';
+                }
+            ?>       
+        </td>
+    </tr>
+<?php 
+    }
+?>
+</table>

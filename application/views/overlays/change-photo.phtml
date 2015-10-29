@@ -1,0 +1,24 @@
+<div class="main">
+    <h1>Change Photo</h1>
+    <em class="alt">Uploading a new photo for the selected member</em>
+    <div>
+        <p class="error upload-error"></p>
+        <form enctype="multipart/form-data" name="upload">
+        	<input type="hidden" name="id" value="<?php echo $this->param; ?>" />
+        	<input type="hidden" name="MAX_FILE_SIZE" value="200000" />
+	        <dl>
+	            <dt class="upload">
+	                <input class="short-for-tooltip" type="file" name="file" />
+	                <label class="pseudo-label">Upload the list of people to be added</label>
+	                <span class="green-button"><span>choose file</span></span>
+	                <span class="validation-arrow">&nbsp;</span>
+	            </dt>
+	        </dl>
+	    </form>	    
+    </div>
+</div>
+<div class="CTA">
+    <button class="green-button first" id="upload-photo"><span>upload</span></button>
+    <button class="black-button close"><span>cancel</span></button>
+</div>
+

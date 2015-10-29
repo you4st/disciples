@@ -1,0 +1,514 @@
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] - test:Array
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] - (
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [name] => 한서희
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [gender] => F
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [e_last] => Han
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [e_first] => Rachel
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [e_middle] => Seohee
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [birth_month] => 11
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [birth_day] => 10
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [birth_year] => 2006
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [birth_lunar] => 0
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [baptized] => 1
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [active] => 1
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [registered] => 1
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [marital_status] => 1
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [street] => 4917 122ND AVE SE
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [city] => BELLEVUE
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [state] => WA
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] -     [zip] => 98006
+(8012)DEBUG: 127.0.0.1 [Disciples_Model_Individual] - )
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - shan logged in successfully.
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - shan logged in successfully.
+(8012)ERR: 127.0.0.1 [AjaxController] - SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'fam_id' in field list is ambiguous
+(8012)ERR: 127.0.0.1 [AjaxController] - SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'fam_id' in field list is ambiguous
+(8012)ERR: 127.0.0.1 [AjaxController] - SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'fam_id' in field list is ambiguous
+(8012)ERR: 127.0.0.1 [AjaxController] - SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'fam_id' in field list is ambiguous
+(8012)ERR: 127.0.0.1 [AjaxController] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'relation' in 'field list'
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_Controller_Action_Exception' with message 'Method "_loadPeople" does not exist and was not trapped in __call()' in C:\wamp\www\disciples\library\Zend\Controller\Action.php:488
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\application\controllers\ReportController.php(11): Zend_Controller_Action->__call('_loadPeople', Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\ReportController.php(11): ReportController->_loadPeople()
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(133): ReportController->init()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(281): Zend_Controller_Action->__construct(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_Controller_Action_Exception' with message 'Method "_loadPeople" does not exist and was not trapped in __call()' in C:\wamp\www\disciples\library\Zend\Controller\Action.php:488
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\application\controllers\ReportController.php(11): Zend_Controller_Action->__call('_loadPeople', Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\ReportController.php(11): ReportController->_loadPeople()
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(133): ReportController->init()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(281): Zend_Controller_Action->__construct(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_Controller_Action_Exception' with message 'Method "_loadPeople" does not exist and was not trapped in __call()' in C:\wamp\www\disciples\library\Zend\Controller\Action.php:488
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\application\controllers\ReportController.php(11): Zend_Controller_Action->__call('_loadPeople', Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\ReportController.php(11): ReportController->_loadPeople()
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(133): ReportController->init()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(281): Zend_Controller_Action->__construct(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_Controller_Action_Exception' with message 'Method "_loadPeople" does not exist and was not trapped in __call()' in C:\wamp\www\disciples\library\Zend\Controller\Action.php:488
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\application\controllers\ReportController.php(11): Zend_Controller_Action->__call('_loadPeople', Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\ReportController.php(11): ReportController->_loadPeople()
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(133): ReportController->init()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(281): Zend_Controller_Action->__construct(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_Controller_Action_Exception' with message 'Method "_loadPeople" does not exist and was not trapped in __call()' in C:\wamp\www\disciples\library\Zend\Controller\Action.php:488
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\application\controllers\ReportController.php(11): Zend_Controller_Action->__call('_loadPeople', Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\ReportController.php(11): ReportController->_loadPeople()
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(133): ReportController->init()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(281): Zend_Controller_Action->__construct(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - admin logged in successfully.
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_View_Exception' with message 'script 'undefined.phtml' not found in path (./application/views/partials/;./application/views/overlays/)' in C:\wamp\www\disciples\library\Zend\View\Abstract.php:988
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(34): Zend_View_Abstract->render('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->contentAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('contentAction')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_View_Exception' with message 'script 'undefined.phtml' not found in path (./application/views/partials/;./application/views/overlays/)' in C:\wamp\www\disciples\library\Zend\View\Abstract.php:988
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(34): Zend_View_Abstract->render('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->contentAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('contentAction')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_View_Exception' with message 'script 'undefined.phtml' not found in path (./application/views/partials/;./application/views/overlays/)' in C:\wamp\www\disciples\library\Zend\View\Abstract.php:988
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(34): Zend_View_Abstract->render('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->contentAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('contentAction')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_View_Exception' with message 'script 'undefined.phtml' not found in path (./application/views/partials/;./application/views/overlays/)' in C:\wamp\www\disciples\library\Zend\View\Abstract.php:988
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(34): Zend_View_Abstract->render('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->contentAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('contentAction')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_View_Exception' with message 'script 'undefined.phtml' not found in path (./application/views/partials/;./application/views/overlays/)' in C:\wamp\www\disciples\library\Zend\View\Abstract.php:988
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(34): Zend_View_Abstract->render('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->contentAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('contentAction')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_View_Exception' with message 'script 'undefined.phtml' not found in path (./application/views/partials/;./application/views/overlays/)' in C:\wamp\www\disciples\library\Zend\View\Abstract.php:988
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(34): Zend_View_Abstract->render('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->contentAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('contentAction')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_View_Exception' with message 'script 'undefined.phtml' not found in path (./application/views/partials/;./application/views/overlays/)' in C:\wamp\www\disciples\library\Zend\View\Abstract.php:988
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(34): Zend_View_Abstract->render('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->contentAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('contentAction')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_View_Exception' with message 'script 'undefined.phtml' not found in path (./application/views/partials/;./application/views/overlays/)' in C:\wamp\www\disciples\library\Zend\View\Abstract.php:988
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(34): Zend_View_Abstract->render('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->contentAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('contentAction')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_View_Exception' with message 'script 'undefined.phtml' not found in path (./application/views/partials/;./application/views/overlays/)' in C:\wamp\www\disciples\library\Zend\View\Abstract.php:988
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(34): Zend_View_Abstract->render('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->contentAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('contentAction')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_View_Exception' with message 'script 'undefined.phtml' not found in path (./application/views/partials/;./application/views/overlays/)' in C:\wamp\www\disciples\library\Zend\View\Abstract.php:988
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(34): Zend_View_Abstract->render('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->contentAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('contentAction')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_View_Exception' with message 'script 'undefined.phtml' not found in path (./application/views/partials/;./application/views/overlays/)' in C:\wamp\www\disciples\library\Zend\View\Abstract.php:988
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(34): Zend_View_Abstract->render('undefined.phtml')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->contentAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('contentAction')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - shan logged in successfully.
+(8012)ERR: 127.0.0.1 [AjaxController] - SQLSTATE[HY093]: Invalid parameter number: no parameters were bound
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - shan logged in successfully.
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - admin logged in successfully.
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - shan logged in successfully.
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - shan logged in successfully.
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - shan logged in successfully.
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - shan logged in successfully.
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - shan logged in successfully.
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'age' in 'where clause'' in C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php:228
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php(228): PDOStatement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Db\Adapter\Abstract.php(480): Zend_Db_Statement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Table_Select), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Disciples\Model\Individual.php(130): Zend_Db_Table_Abstract->fetchAll(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\application\controllers\AjaxController.php(286): Disciples_Model_Individual->getMemberByFilter(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->filterMemberAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #9 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('filterMemberAct...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #10 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #11 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #12 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #13 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #14 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'age' in 'where clause'' in C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php:234
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\library\Zend\Db\Adapter\Abstract.php(480): Zend_Db_Statement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Table_Select), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Disciples\Model\Individual.php(130): Zend_Db_Table_Abstract->fetchAll(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\application\controllers\AjaxController.php(286): Disciples_Model_Individual->getMemberByFilter(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->filterMemberAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('filterMemberAct...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #9 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #10 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #11 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #12 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #13 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'age' in 'where clause'' in C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php:228
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php(228): PDOStatement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Db\Adapter\Abstract.php(480): Zend_Db_Statement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Table_Select), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Disciples\Model\Individual.php(130): Zend_Db_Table_Abstract->fetchAll(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\application\controllers\AjaxController.php(286): Disciples_Model_Individual->getMemberByFilter(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->filterMemberAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #9 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('filterMemberAct...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #10 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #11 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #12 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #13 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #14 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'age' in 'where clause'' in C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php:234
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\library\Zend\Db\Adapter\Abstract.php(480): Zend_Db_Statement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Table_Select), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Disciples\Model\Individual.php(130): Zend_Db_Table_Abstract->fetchAll(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\application\controllers\AjaxController.php(286): Disciples_Model_Individual->getMemberByFilter(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->filterMemberAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('filterMemberAct...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #9 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #10 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #11 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #12 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #13 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'age' in 'where clause'' in C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php:228
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php(228): PDOStatement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Db\Adapter\Abstract.php(480): Zend_Db_Statement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Table_Select), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Disciples\Model\Individual.php(130): Zend_Db_Table_Abstract->fetchAll(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\application\controllers\AjaxController.php(286): Disciples_Model_Individual->getMemberByFilter(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->filterMemberAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #9 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('filterMemberAct...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #10 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #11 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #12 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #13 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #14 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'age' in 'where clause'' in C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php:234
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\library\Zend\Db\Adapter\Abstract.php(480): Zend_Db_Statement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Table_Select), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Disciples\Model\Individual.php(130): Zend_Db_Table_Abstract->fetchAll(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\application\controllers\AjaxController.php(286): Disciples_Model_Individual->getMemberByFilter(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->filterMemberAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('filterMemberAct...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #9 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #10 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #11 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #12 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #13 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'age' in 'where clause'' in C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php:228
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php(228): PDOStatement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Db\Adapter\Abstract.php(480): Zend_Db_Statement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Table_Select), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Disciples\Model\Individual.php(130): Zend_Db_Table_Abstract->fetchAll(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\application\controllers\AjaxController.php(286): Disciples_Model_Individual->getMemberByFilter(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->filterMemberAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #9 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('filterMemberAct...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #10 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #11 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #12 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #13 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #14 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'age' in 'where clause'' in C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php:234
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\library\Zend\Db\Adapter\Abstract.php(480): Zend_Db_Statement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Table_Select), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Disciples\Model\Individual.php(130): Zend_Db_Table_Abstract->fetchAll(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\application\controllers\AjaxController.php(286): Disciples_Model_Individual->getMemberByFilter(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->filterMemberAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('filterMemberAct...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #9 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #10 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #11 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #12 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #13 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'age' in 'where clause'' in C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php:228
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php(228): PDOStatement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Db\Adapter\Abstract.php(480): Zend_Db_Statement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Table_Select), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Disciples\Model\Individual.php(130): Zend_Db_Table_Abstract->fetchAll(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\application\controllers\AjaxController.php(286): Disciples_Model_Individual->getMemberByFilter(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->filterMemberAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #9 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('filterMemberAct...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #10 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #11 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #12 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #13 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #14 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'age' in 'where clause'' in C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php:234
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\library\Zend\Db\Adapter\Abstract.php(480): Zend_Db_Statement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Table_Select), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Disciples\Model\Individual.php(130): Zend_Db_Table_Abstract->fetchAll(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\application\controllers\AjaxController.php(286): Disciples_Model_Individual->getMemberByFilter(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->filterMemberAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('filterMemberAct...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #9 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #10 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #11 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #12 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #13 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'age' in 'where clause'' in C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php:228
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php(228): PDOStatement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Db\Adapter\Abstract.php(480): Zend_Db_Statement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Table_Select), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Disciples\Model\Individual.php(130): Zend_Db_Table_Abstract->fetchAll(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\application\controllers\AjaxController.php(286): Disciples_Model_Individual->getMemberByFilter(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->filterMemberAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #9 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('filterMemberAct...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #10 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #11 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #12 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #13 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #14 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Next exception 'Zend_Db_Statement_Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'age' in 'where clause'' in C:\wamp\www\disciples\library\Zend\Db\Statement\Pdo.php:234
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\library\Zend\Db\Adapter\Abstract.php(480): Zend_Db_Statement->execute(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query(Object(Zend_Db_Table_Select), Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Disciples\Model\Individual.php(130): Zend_Db_Table_Abstract->fetchAll(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\application\controllers\AjaxController.php(286): Disciples_Model_Individual->getMemberByFilter(Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->filterMemberAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('filterMemberAct...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #9 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #10 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #11 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #12 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #13 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_View_Exception' with message 'script 'change-photo.phtml' not found in path (./application/views/partials/;./application/views/overlays/)' in C:\wamp\www\disciples\library\Zend\View\Abstract.php:988
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('change-photo.ph...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(40): Zend_View_Abstract->render('change-photo.ph...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->contentAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('contentAction')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_Controller_Action_Exception' with message 'Method "_generateFileName" does not exist and was not trapped in __call()' in C:\wamp\www\disciples\library\Zend\Controller\Action.php:488
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\application\controllers\AjaxController.php(463): Zend_Controller_Action->__call('_generateFileNa...', Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(463): AjaxController->_generateFileName('member.png')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->uploadPhotoAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('uploadPhotoActi...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_Controller_Action_Exception' with message 'Method "_generateFileName" does not exist and was not trapped in __call()' in C:\wamp\www\disciples\library\Zend\Controller\Action.php:488
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\application\controllers\AjaxController.php(463): Zend_Controller_Action->__call('_generateFileNa...', Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(463): AjaxController->_generateFileName('member.png')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->uploadPhotoAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('uploadPhotoActi...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_Controller_Action_Exception' with message 'Method "_generateFileName" does not exist and was not trapped in __call()' in C:\wamp\www\disciples\library\Zend\Controller\Action.php:488
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\application\controllers\AjaxController.php(460): Zend_Controller_Action->__call('_generateFileNa...', Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(460): AjaxController->_generateFileName('member.png')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->uploadPhotoAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('uploadPhotoActi...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_Controller_Action_Exception' with message 'Method "_generateFileName" does not exist and was not trapped in __call()' in C:\wamp\www\disciples\library\Zend\Controller\Action.php:488
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\application\controllers\AjaxController.php(458): Zend_Controller_Action->__call('_generateFileNa...', Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(458): AjaxController->_generateFileName('member.png')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->uploadPhotoAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('uploadPhotoActi...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_Controller_Action_Exception' with message 'Method "_generateFileName" does not exist and was not trapped in __call()' in C:\wamp\www\disciples\library\Zend\Controller\Action.php:488
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\application\controllers\AjaxController.php(458): Zend_Controller_Action->__call('_generateFileNa...', Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\application\controllers\AjaxController.php(458): AjaxController->_generateFileName('member.png')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): AjaxController->uploadPhotoAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('uploadPhotoActi...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 {main}
+(8012)ERR: 127.0.0.1 [Disciples_User] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'linkedKorean@gmail.com' for key 'email_UNIQUE'
+(8012)ERR: 127.0.0.1 [Disciples_User] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'linkedKorean@gmail.com' for key 'email_UNIQUE'
+(8012)ERR: 127.0.0.1 [Disciples_User] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'linkedKorean@gmail.com' for key 'email_UNIQUE'
+(8012)ERR: 127.0.0.1 [ErrorController] - Application error:exception 'Zend_View_Exception' with message 'script '<p class="error">There's a problem while registering a new user. Please try again.</p>' not found in path (C:\wamp\www\disciples\application/views/partials/;C:\wamp\www\disciples\application/views/scripts/)' in C:\wamp\www\disciples\library\Zend\View\Abstract.php:988
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('<p class="error...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\library\Zend\View\Helper\Partial.php(109): Zend_View_Abstract->render('<p class="error...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 [internal function]: Zend_View_Helper_Partial->partial('<p class="error...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\library\Zend\View\Abstract.php(350): call_user_func_array(Array, Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 C:\wamp\www\disciples\application\controllers\IndexController.php(97): Zend_View_Abstract->__call('partial', Array)
+(8012)ERR: 127.0.0.1 [ErrorController] - #5 C:\wamp\www\disciples\application\controllers\IndexController.php(97): Zend_View->partial('<p class="error...')
+(8012)ERR: 127.0.0.1 [ErrorController] - #6 C:\wamp\www\disciples\library\Zend\Controller\Action.php(516): IndexController->registerAction()
+(8012)ERR: 127.0.0.1 [ErrorController] - #7 C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('registerAction')
+(8012)ERR: 127.0.0.1 [ErrorController] - #8 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #9 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #10 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #11 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #12 {main}
+(8012)ERR: 127.0.0.1 [Disciples_User] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'linkedKorean@gmail.com' for key 'email_UNIQUE'
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - admin logged in successfully.
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - shan logged in successfully.
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - guest logged in successfully.
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - admin logged in successfully.
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - guest logged in successfully.
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - shan logged in successfully.
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - shan logged in successfully.
+(8012)ERR: 127.0.0.1 [ErrorController] - Page not found:exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (admin)' in C:\wamp\www\disciples\library\Zend\Controller\Dispatcher\Standard.php:248
+(8012)ERR: 127.0.0.1 [ErrorController] - Stack trace:
+(8012)ERR: 127.0.0.1 [ErrorController] - #0 C:\wamp\www\disciples\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+(8012)ERR: 127.0.0.1 [ErrorController] - #1 C:\wamp\www\disciples\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+(8012)ERR: 127.0.0.1 [ErrorController] - #2 C:\wamp\www\disciples\library\Zend\Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #3 C:\wamp\www\disciples\index.php(29): Zend_Application->run()
+(8012)ERR: 127.0.0.1 [ErrorController] - #4 {main}
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - guest logged in successfully.
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - shan logged in successfully.
+(8012)DEBUG: 127.0.0.1 [Disciples_Authenticator] - shan logged in successfully.
+(6928)DEBUG: 127.0.0.1 [Disciples_Authenticator] - admin logged in successfully.

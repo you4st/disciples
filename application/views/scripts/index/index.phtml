@@ -1,0 +1,30 @@
+<a class="main-menu" href="/disciples/manage" title="People Management" >
+    <span class="manage-label">&nbsp;</span>
+    <div class="faux-menu-button">
+        <span class="menu-button-large">PEOPLE MANAGEMENT</span>        
+        <span><?php echo $this->isAdmin ? '교인 등록 / 삭제 / 수정' : '교인 정보'; ?></span>
+    </div>
+</a>
+<a class="main-menu" href="/disciples/report" title="Report">
+    <span class="report-label">&nbsp;</span>
+    <div class="faux-menu-button">
+        <span class="menu-button-large">REPORT</span>
+        <span>연령별 / 구분별 / 성별 통계</span>
+    </div>
+</a>
+<?php if ($this->isAdmin) { ?>
+<a class="main-menu" href="/disciples/index/register" title="Register">
+    <span class="register-label">&nbsp;</span>
+    <div class="faux-menu-button">
+        <span class="menu-button-large">REGISTER</span>
+        <span>새로운 사용자 등록</span>
+    </div>
+</a>
+<a class="main-menu" href="/disciples/admin" title="Admin">
+    <span class="admin-label">&nbsp;</span>
+    <div class="faux-menu-button">
+        <span class="menu-button-large">ADMIN</span>
+        <span>관리자 페이지</span>
+    </div>
+</a>
+<?php } ?>

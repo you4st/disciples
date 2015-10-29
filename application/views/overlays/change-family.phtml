@@ -1,0 +1,38 @@
+<div class="main family-search">
+    <h1>Change Family Information</h1>
+    <em class="alt">Changing head of household and role of the household, removing the family members</em>
+    <div id="search_result">
+    	<input name="familyId" type="hidden" value="<?php echo $this->familyId; ?>" />
+	    <table>
+			<tr>
+				<td align="center">이름</td>
+				<td width="70" align="center">세대주</td>
+				<td width="120" align="center">관계</td>
+				<td width="70" align="center">삭제</td>
+			</tr>
+	<?php
+		foreach ($this->members as $member) {
+			$e_name = $member['e_first'] . ' ' . $member['e_middle'] . ' ' . $member['e_last'];
+			$name = empty($e_name) ? $member['name'] : $member['name'] . '<br />' . $e_name;
+	?>
+		<tr>
+			<td align="center"><?php echo $name; ?></td>
+			<td align="center"><input type="radio" name="head_of_house" value="<?php echo $member['id']; ?>" <?php echo $member['head_of_house'] ? 'checked="checked"' : ''; ?> /></td>
+			<td align="center">
+				<select name="relation_<?php echo $member['id']; ?>">
+					<?php echo $member['relationOptions']; ?>
+				</select>
+			</td>
+			<td align="center"><input type="checkbox" name="remove_member" value="<?php echo $member['id']; ?>" /></td>
+		</tr>
+	<?php
+		}
+	?>
+	    </table>
+    </div>
+</div>
+<div class="CTA">
+    <button class="green-button first" id="change-family-info"><span>apply</span></button>
+    <button class="black-button close"><span>cancel</span></button>
+</div>
+

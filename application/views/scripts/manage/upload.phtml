@@ -1,0 +1,27 @@
+<div class="back-button-container">
+    <button onclick="location.href='/disciples/manage'" class="black-button"><span>back</span></button>
+</div>
+<div class="inner-right">
+    <h1>BULK UPLOAD<br /><em class="alt">Please upload a well-formatted excel file to be processed. (.xls or .xlsx)</em></h1>
+    
+    <?php echo $this->errorMessage; ?>
+
+    <form enctype="multipart/form-data" action="/disciples/manage/upload" method="post">
+	    <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+	    <dl>
+			<dt class="upload">
+				<input class="short-for-tooltip" type="file" name="file" />
+  				<label class="pseudo-label">Upload the list of people to be added</label>
+  				<span class="green-button"><span>choose file</span></span>
+ 				<span class="validation-arrow">&nbsp;</span>
+  			</dt>
+  		</dl>
+	    <p><pre><?php print_r($this->fileData); ?></pre></p>
+	    
+	    <button class="green-button" type="submit" name="submit" value="upload">
+            <span>Upload File</span>
+        </button>        
+	</form>
+</div>
+
+

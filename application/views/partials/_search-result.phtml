@@ -1,0 +1,35 @@
+<p class="error search-error"></p>
+<div>
+	<span>세대주와의 관계:</span>
+	<select name="relation">
+		<?php echo $this->relationOptions; ?>
+	</select>
+</div>
+<table>
+	<tr>
+		<td width="20">&nbsp;</td>
+		<td width="180" align="center">이름</td>
+		<td width="120" align="center">생년월일</td>
+		<td align="center">나이</td>
+	</tr>
+<?php
+	$checked = true;
+	foreach ($this->members as $member) {
+		$e_name = $member['e_first'] . ' ' . $member['e_middle'] . ' ' . $member['e_last'];
+		$birthDate = $member['birth_year'] . '년 ' . $member['birth_month'] . '월 ' . $member['birth_day'] . '일';
+		$age = (date("md", date("U", mktime(0, 0, 0, $member['birth_month'], $member['birth_day'], $member['birth_year']))) > date("md")
+			 ? ((date("Y") - $member['birth_year']) - 1)
+			 : (date("Y") - $member['birth_year']));
+		$name = empty($e_name) ? $member['name'] : $member['name'] . ' (' . $e_name . ')';
+?>
+	<tr>
+		<td align="center"><input type="radio" name="family-member-id" value="<?php echo $member['id']; ?>" <?php echo $checked ? 'checked="checked"' : ''; ?>></td>
+		<td align="center"><?php echo $name; ?></td>
+		<td align="center"><?php echo $birthDate?></td>
+		<td align="center"><?php echo $age?> 세</td>
+	</tr>
+<?php
+		$checked = false;
+	}
+?>
+</table>

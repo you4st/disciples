@@ -1,0 +1,22 @@
+<div id="header-list">
+    <div id="header-list-content">
+        <div id="header-left">
+            <a href="/disciples/"><img src="/disciples/images/logo/disciples2.png" /></a>
+        </div>
+        <div id="header-middle">
+            <ul id="header-menu">
+                <li><a href="/disciples/">HOME</a></li>
+                <li><a href="/disciples/manage">교인관리</a></li>
+                <li><a href="/disciples/report">REPORT</a></li>
+                <li><a href="/disciples/calendar">CALENDAR</a></li>
+            </ul>
+        </div>
+        <div id="header-right">
+            <ul id="header-list-controls">
+                <li><a href="/disciples/index/logout">sign out</a></li>
+                <li>|</li>
+                <li><?php echo $this->user['name']; ?> [<?php echo $this->user['id']; ?>]</li>
+            </ul>
+        </div>
+    </div>
+</div>

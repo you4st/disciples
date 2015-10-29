@@ -1,0 +1,256 @@
+<?php
+    $e_name = $this->e_first . ' ' . $this->e_middle . ' ' . $this->e_last;
+    $birthDate = $this->birth_year . "년 " . $this->birth_month . '월 ' . $this->birth_day . '일';
+    $age = (date("md", date("U", mktime(0, 0, 0, $this->birth_month, $this->birth_day, $this->birth_year))) > date("md")
+            ? ((date("Y") - $this->birth_year) - 1)
+            : (date("Y") - $this->birth_year));
+    
+    if ($this->birth_lunar) {
+        $birthDate .= ' (음력)';
+    } else {
+        $birthDate .= ' (양력)';
+    }
+    
+    $address = $this->street . '<br>' . $this->city . ', ' . $this->state . ' ' . $this->zip;
+    $registered_on = $this->registered_on && $this->registered_on != '0000-00-00' ? substr($this->registered_on, 0, 4) . '년 ' . substr($this->registered_on, 5, 2) . '월 ' . substr($this->registered_on, -2) . '일' : '무등록';
+    $photo = $this->photo ? '/disciples/upload/' . $this->photo : '/disciples/images/icons/member.jpg';
+?>
+<div id="static">
+    <div id="photo">
+        <img src="<?php echo $photo; ?>" />
+        <?php if ($this->isAdmin) { ?>
+        <span class="button-light overlay-link" data="change-photo" param="<?php echo $this->id; ?>">사진변경</span>
+        <?php } ?>
+    </div>
+    <table class="member-detail">
+        <tr>
+            <td width="70" align="right">이름:</td>
+            <td width="250"><b><?php echo $this->name; ?></b></td>
+        </tr>
+        <tr>
+            <td align="right">영문이름:</td>
+            <td><b><?php echo $e_name; ?></b></td>
+        </tr>
+        <tr>
+            <td align="right">성별:</td>
+            <td><?php echo $this->gender == 'M' ? '남' : '여'; ?></td>
+        </tr>
+        <tr>
+            <td align="right">직분:</td>
+            <td><?php echo $this->dutyName ? $this->dutyName : '성도'; ?></td>
+        </tr>
+        <tr>
+            <td align="right">생년월일:</td>
+            <td><?php echo $birthDate; ?></td>
+        </tr>
+        <tr>
+            <td align="right">나이:</td>
+            <td><?php echo $age; ?> 세</td>
+        </tr>
+        <tr>
+            <td align="right">집주소:</td>
+            <td><?php echo $address; ?></td>
+        </tr>
+        <tr>
+            <td align="right">집전화 #:</td>
+            <td><?php echo $this->home_phone ? '(' . substr($this->home_phone, 0, 3) . ') ' . substr($this->home_phone, 3, 3) . '-' . substr($this->home_phone, -4) : ''; ?></td>
+        </tr>
+        <tr>
+            <td align="right">모바일 #:</td>
+            <td><?php echo $this->mobile_phone ? '(' . substr($this->mobile_phone, 0, 3) . ') ' . substr($this->mobile_phone, 3, 3) . '-' . substr($this->mobile_phone, -4) : ''; ?></td>
+        </tr>
+        <tr>
+            <td align="right">비지니스 #:</td>
+            <td><?php echo $this->business_phone ? '(' . substr($this->business_phone, 0, 3) . ') ' . substr($this->business_phone, 3, 3) . '-' . substr($this->business_phone, -4) : ''; ?></td>
+        </tr>
+        <tr>
+            <td align="right">Email:</td>
+            <td><?php echo $this->email; ?></td>
+        </tr>
+        <tr>
+            <td align="right">등록일:</td>
+            <td><?php echo $registered_on; ?></td>
+        </tr>
+        <tr>
+            <td align="right">세례:</td>
+            <td><?php echo $this->baptized ? '받음' : '안받음'; ?></td>
+        </tr>
+        <?php if ($this->baptized && $this->baptized_on && $this->baptized_on != '0000-00-00') { ?>
+        <tr>
+            <td align="right">세례일:</td>
+            <td><?php echo substr($this->baptized_on, 0, 4) . '년 ' . substr($this->baptized_on, 5, 2) . '월 ' . substr($this->baptized_on, -2) . '일'; ?></td>
+        </tr>
+        <?php } ?>
+        <tr>
+            <td align="right">결혼유무:</td>
+            <td><?php echo $this->maritalStatus; ?></td>
+        </tr>
+        <tr>
+            <td align="right">상태:</td>
+            <td><?php echo $this->active ? '활성' : '비활성'; ?></td>
+        </tr>
+        <tr>
+            <td align="right">수정일:</td>
+            <td><?php echo $this->last_updated_on; ?></td>
+        </tr>
+        <?php if ($this->isAdmin) { ?>
+        <tr>
+            <td colspan="2" align="center"><span class="button-light show-member-form">수정</span></td>
+        </tr>
+        <?php } ?>
+    </table>    
+</div>
+
+<div id="modify" class="hide">
+    <p class="error"></p>
+    <input type="hidden" name="memberId" value="<?php echo $this->id; ?>" />
+    <table class="member-detail">
+        <tr>
+            <td width="65" align="right">이름:</td>
+            <td><input type="text" name="name_<?php echo $this->id; ?>" value="<?php echo $this->name; ?>" /></td>
+        </tr>
+        <tr>
+            <td align="right">영문이름:</td>
+            <td>
+                <table id="e-name">
+                    <tr>
+                        <td>First</td>
+                        <td>Middle</td>
+                        <td>Last</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="e_first_<?php echo $this->id; ?>" value="<?php echo $this->e_first; ?>" /></td>
+                        <td><input type="text" name="e_middle_<?php echo $this->id; ?>" value="<?php echo $this->e_middle; ?>" /></td>
+                        <td><input type="text" name="e_last_<?php echo $this->id; ?>" value="<?php echo $this->e_last; ?>" /></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">성별:</td>
+            <td>
+                <input type="radio" name="gender_<?php echo $this->id; ?>" value="M" <?php echo $this->gender == 'M' ? 'checked="checked"' : '';?> id="m_men" /><label for="m_men">남</label>
+                <input type="radio" name="gender_<?php echo $this->id; ?>" value="F" <?php echo $this->gender == 'F' ? 'checked="checked"' : '';?> id="m_women" /><label for="m_women">여</label>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">직분:</td>
+            <td><select name="duty_<?php echo $this->id; ?>">
+                    <option value="0">--</option>          
+                       <?php echo $this->dutyOptions; ?>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">생년월일:</td>
+            <td>
+                <select name="birth_month_<?php echo $this->id; ?>" class="month">
+                    <option value="0">month</option>
+                    <?php 
+                        foreach (range(1, 12) as $month) {
+                            $checked = ($month == $this->birth_month ? ' selected="selected"' : '');                             
+                            echo '<option value="' . $month . '"' . $checked . '>' . $month . '</option>';
+                        }
+                    ?>
+                </select> /
+                <select name="birth_day_<?php echo $this->id; ?>" class="day">
+                    <option value="0">day</option>
+                    <?php 
+                        foreach (range(1, 31) as $day) {
+                            $checked = ($day == $this->birth_day ? ' selected="selected"' : '');
+                            echo '<option value="' . $day . '"' . $checked . '>' . $day . '</option>';
+                        }
+                    ?>
+                </select> /
+                <select name="birth_year_<?php echo $this->id; ?>" class="year">
+                    <option value="0">year</option>
+                    <?php
+                        $thisYear = date('Y');
+                        $startYear = ($thisYear - 110);
+                        $selectYear = ($thisYear);
+                        foreach (range($thisYear, $startYear) as $year) {
+                            $checked = ($year == $this->birth_year ? ' selected="selected"' : '');
+                            echo '<option value="' . $year . '"' . $checked . '>' . $year . '</option>';
+                        }
+                    ?>
+                </select>&nbsp;&nbsp;
+                <input type="radio" name="birth_lunar_<?php echo $this->id; ?>" value="0" <?php echo $this->birth_lunar ? '' : 'checked="checked"'; ?> id="m_sun" /><label for="m_sun">양력</label>
+                <input type="radio" name="birth_lunar_<?php echo $this->id; ?>" value="1" <?php echo $this->birth_lunar ? 'checked="checked"' : ''; ?> id="m_lunar" /><label for="m_lunar">음력</label>
+            </td>
+        </tr>        
+        <tr>
+            <td align="right">집주소:</td>
+            <td>
+                <table class="address">
+                    <tr>
+                        <td colspan="3">Street</td>
+                    </tr>
+                    <tr>                        
+                        <td colspan="3"><input class="street" name="street_<?php echo $this->id; ?>" type="text" value="<?php echo $this->street; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <td >City</td>
+                        <td >State</td>
+                        <td >Zip</td>
+                    </tr>
+                    <tr>
+                        <td><input class="city" name="city_<?php echo $this->id; ?>" type="text" value="<?php echo $this->city; ?>" /></td>
+                        <td>                   
+                            <select name="state_<?php echo $this->id; ?>" class="state">
+                            <?php echo $this->stateOptions; ?>
+                            </select>
+                        </td>
+                        <td><input class="zip" name="zip_<?php echo $this->id; ?>" type="text" maxlength="5" value="<?php echo $this->zip; ?>" /></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">집전화 #:</td>
+            <td><input name="home_phone_<?php echo $this->id; ?>" type="text" value="<?php echo $this->home_phone; ?>" /></td>
+        </tr>
+        <tr>
+            <td align="right">모바일 #:</td>
+            <td><input name="mobile_phone_<?php echo $this->id; ?>" type="text" value="<?php echo $this->mobile_phone; ?>" /></td>
+        </tr>
+        <tr>
+            <td align="right">비지니스 #:</td>
+            <td><input name="business_phone_<?php echo $this->id; ?>" type="text" value="<?php echo $this->business_phone; ?>" /></td>
+        </tr>
+        <tr>
+            <td align="right">Email:</td>
+            <td><input name="email_<?php echo $this->id; ?>" type="text" value="<?php echo $this->email; ?>" /></td>
+        </tr>
+        <tr>
+            <td align="right">등록일:</td>
+            <td>
+                <input type="text" name="registered_on_<?php echo $this->id; ?>" value="<?php echo $this->registered_on != '0000-00-00' ? $this->registered_on : ''; ?>" />    (yyyy-mm-dd)        
+            </td>
+        </tr>
+        <tr>
+            <td align="right">세례:</td>
+            <td>
+                <input type="radio" class="bap_radio" name="baptized_<?php echo $this->id; ?>" value="1" id="m_baped" <?php echo $this->baptized ? 'checked="checked"' : ''; ?> /><label for="m_baped">받음</label>
+                <input type="radio" class="bap_radio" name="baptized_<?php echo $this->id; ?>" value="0" id="m_nobaped" <?php echo $this->baptized ? '' : 'checked="checked"'; ?> /><label for="m_nobaped">안받음</label>
+                <span class="baptized_on<?php echo $this->baptized ? '' : ' hide';?>">세례일: <input type="text" class="mid" name="baptized_on__<?php echo $this->id; ?>" value="<?php echo $this->baptized_on != '0000-00-00' ? $this->baptized_on : ''; ?>" /> (yyyy-mm-dd)</span>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">결혼유무:</td>
+            <td>
+                <select name="marital_status_<?php echo $this->id; ?>">  
+                    <?php echo $this->maritalOptions; ?>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">상태:</td>
+            <td>
+                <input type="radio" name="active_<?php echo $this->id; ?>" value="1" id="m_active" <?php echo $this->active ? 'checked="checked"' : ''; ?> /><label for="m_active">활성</label>
+                <input type="radio" name="active_<?php echo $this->id; ?>" value="0" id="m_inactive" <?php echo $this->active ? '' : 'checked="checked"'; ?> /><label for="m_inactive">비활성</label>
+            </td>
+        </tr>
+    </table>
+    <button class="black-button cancel-modify"><span>cancel</span></button>
+    <button class="green-button submit-modify"><span>submit</span></button>
+</div>

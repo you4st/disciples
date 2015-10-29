@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <?php echo $this->headTitle('Disciples v1.0'); ?>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">    
+    <link href="/disciples/css/layout.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="/disciples/images/icons/favicon.png">
+    <?php echo $this->headMeta(); ?>
+    <?php echo $this->headLink(); ?>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="/disciples/js/interaction.js"></script>
+    
+    <!-- for map -->
+    <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>	
+	<!--  script type="text/javascript" src="/disciples/js/jquery.ui.map.full.min.js"></script-->    
+    <?php echo $this->headScript(); ?>
+    <script src="http://www.google.com/jsapi"></script>
+    <script>
+        google.load( "webfont", "1" );
+        google.setOnLoadCallback(function() {
+            WebFont.load({ custom: {
+                families: [ "NanumGothic" ],
+                urls: [ "http://fontface.kr/NanumGothic/css" ]
+            }});
+        });
+    </script>
+    
+</head>
+<body>
+    <div id="wrapper">
+        <?php echo $this->partial('_header-list.phtml', array('user' => $this->user)); ?>
+        <div id="content-list">
+            <?php echo $this->layout()->content; ?>
+        </div>
+        <?php echo $this->partial('_footer.phtml', array('user' => $this->user)); ?>
+    </div>
+</body>
+</html>
