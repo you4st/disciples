@@ -1,0 +1,7 @@
+.project
+.vagrant
+.idea
+bin
+vendor
+.DS_Store
+disciples.iml
