@@ -66,11 +66,10 @@ class Disciples_Authenticator implements Zend_Auth_Adapter_Interface
                 $messages = array('Username does not exist');
                 Disciples_Logger::getInstance(__CLASS__)->debug($this->_username . ' failed to login: Username does not exist.');
             } else {
-                $messages = array ('Communication error');
+                $messages = array('Communication error');
                 Disciples_Logger::getInstance(__CLASS__)->debug($this->_username . ' failed to login: db error.');
             }
         }
-
         return new Zend_Auth_Result($code, $this->_identity, $messages);
     }
 
@@ -95,6 +94,10 @@ class Disciples_Authenticator implements Zend_Auth_Adapter_Interface
                 return Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND;
             }
         } catch(Exception $ex) {
+            echo "<pre>";
+            print_r($ex);
+            echo "</pre>";
+            die();
             return Zend_Auth_Result::FAILURE;
         }
     }

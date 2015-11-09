@@ -3,7 +3,7 @@
     <em class="alt error">* required</em>
     <p class="error"></p>
     <div class="new-member">
-    
+
         <div class="section-title">기본정보</div>
         <table>
             <tr>
@@ -28,11 +28,11 @@
 	            <td><input class="mid" name="e_middle" type="text" /></td>
             </tr>
             <tr>
-	            <td align="center"><span class="error">*&nbsp;</span>생년월일</td>
-	            <td colspan="3">
+	            <td align="center">생년월일</td>
+	            <td>
 	            	<select name="birth_month" class="month">
 	            		<option value="0">month</option>
-		            	<?php 
+		            	<?php
 		            		foreach (range(1, 12) as $month) {
 		            			echo '<option value="' . $month . '">' . $month . '</option>';
 		            		}
@@ -40,7 +40,7 @@
 	            	</select> /
 	            	<select name="birth_day" class="day">
 	            		<option value="0">day</option>
-		            	<?php 
+		            	<?php
 		            		foreach (range(1, 31) as $day) {
 		            			echo '<option value="' . $day . '">' . $day . '</option>';
 		            		}
@@ -56,23 +56,29 @@
 		            			echo '<option value="' . $year . '">' . $year . '</option>';
 		            		}
 		            	?>
-	            	</select>&nbsp;&nbsp;
+	            	</select><br><br>
 	            	<input type="radio" name="birth_lunar" value="0" checked="checked" id="sun" /><label for="sun">양력</label>
 	                <input type="radio" name="birth_lunar" value="1" id="lunar" /><label for="lunar">음력</label>
 	            </td>
+                <td align="center">목장</td>
+				<td>
+                    <input class="cell" type="text" name="cell" id="cell" />&nbsp;&nbsp;
+					<input type="checkbox" name="cell_leader" value="1" id="cell_leader" /><label for="cell_leader">목자</label>
+					<input type="checkbox" name="cell_co_leader" value="1" id="cell_co_leader" /><label for="cell_co_leader">부목자</label>
+				</td>
 	            <td align="center">교회 직분</td>
 	            <td>
 	                <select name="duty">
-	                    <option value="0">--</option>          
+	                    <option value="0">--</option>
 	                	<?php echo $this->dutyOptions; ?>
 	                </select>
-	            </td>	            
+	            </td>
             </tr>
             <tr>
 	            <td align="center">집전화 #</td>
 	            <td><input name="home_phone" type="text"></td>
 	            <td align="center">모바일 #</td>
-	            <td><input name="mobile_phone" type="text"></td>	            
+	            <td><input name="mobile_phone" type="text"></td>
 	            <td align="center">상태</td>
 	            <td>
 	            	<input type="radio" name="active" value="1" id="active" checked="checked" /><label for="active">활성</label>
@@ -86,48 +92,61 @@
 	            </td>
 	            <td align="center">교회 등록일</td>
 	            <td>
-	            	<input type="text" class="mid" name="registered_on" /> (yyyy-mm-dd)
+	            	<input type="text" class="mid" name="registered_on" />
 	            </td>
 	            <td align="center">결혼</td>
 	            <td>
-	                <select name="marital_status">  
+	                <select name="marital_status">
 	                	<?php echo $this->maritalOptions; ?>
 	                </select>
 	            </td>
             </tr>
             <tr>
+                <td align="center">비지니스 이름</td>
+                <td>
+                    <input type="text" name="business_name" />
             	<td align="center">세례</td>
-	            <td colspan="5">
+	            <td colspan="3">
 	                <input type="radio" name="baptized" value="1" id="baped" /><label for="baped">받음</label>
 	                <input type="radio" name="baptized" value="0" checked="checked" id="nobaped" /><label for="nobaped">안받음</label>
-	                <span class="baptized_on hide">세례일: <input type="text" class="mid" name="baptized_on" /> (yyyy-mm-dd)</span>	                
+	                <span class="baptized_on hide">세례일: <input type="text" class="mid" name="baptized_on" /></span>
 	            </td>
-            </tr> 
+            </tr>
             <tr>
-	            <td align="center"><span class="error">*&nbsp;</span>주소</td>
-	            <td colspan="5" valign="top">
+	            <td align="center">주소</td>
+	            <td colspan="3" valign="top">
 	            	<table class="address">
 	            		<tr>
 				            <td align="right">Street</td>
-				            <td colspan="5"><input class="street" name="street" type="text" /></td>
+				            <td><input class="street" name="street" type="text" /></td>
 				        </tr>
 				        <tr>
 	                		<td align="right">City</td>
 	                		<td><input name="city" type="text" /></td>
+                        </tr>
+                        <tr>
 	                		<td align="right">State</td>
-	                		<td>                   
+	                		<td>
 				                <select name="state" class="state">
-				                <?php echo $this->stateOptions; ?>    
+				                <?php echo $this->stateOptions; ?>
 				                </select>
 				            </td>
+                        </tr>
+                        <tr>
 	                		<td align="right">Zip</td>
 	                		<td><input class="zip" name="zip" type="text" maxlength="5"></td>
 	                	</tr>
 	                </table>
 	            </td>
+                <td align="center">양육</td>
+                <td valign="top">
+                    <?php
+                    echo $this->nurtureOptions;
+                    ?>
+                </td>
             </tr>
         </table>
-        
+
         <div class="section-title">가족정보 <span class="button" id="add-member">Add Family Member</span></div>
         <table id="family-member">
             <tr>
@@ -136,14 +155,14 @@
                 <td align="center" width="80">First Name</td>
                 <td align="center" width="80">성별</td>
                 <td align="center" width="60">관계</td>
-                <td align="center" width="170"><span class="error">*&nbsp;</span>생년월일</td>
+                <td align="center" width="170">생년월일</td>
                 <td align="center" width="80">모바일 #</td>
                 <td align="center">Email</td>
             </tr>
-        </table>      
-    </div>    
+        </table>
+    </div>
 </div>
 <div class="CTA">
-    <button class="green-button submit first" id="new-member"><span>submit</span></button>   
+    <button class="green-button submit first" id="new-member"><span>submit</span></button>
 </div>
 

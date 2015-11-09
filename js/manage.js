@@ -2,20 +2,20 @@ $(document).ready(function() {
     // adjust the width of the middle column
     $(function() {
         $("#middle-col").css('width', $(window).width() - 220);
-    });    
-    
+    });
+
     // for map
     initialize();
-    
+
     // refresh the page when resizing the window
     $(window).on('resize', function() {
         location.reload();
     });
-    
+
     $("#left-nav").click(function() {
         if ($("#left-col").is(":visible")) {
             $("#left-col").hide("slide");
-            $("#left-nav").animate({"left": "-=200"});            
+            $("#left-nav").animate({"left": "-=200"});
             $("#middle-col").animate({"left": "-=200"});
             $("#middle-col").width("+=200");
             $("#left-arrow").attr("src", "/disciples/images/icons/arrow-right.png");
@@ -46,16 +46,16 @@ $(document).ready(function() {
             $(this).hover(function() {
                 $(this).css("background-color", "#f0a8a8");
             });
-            
+
             if (!$("#right-col").is(":visible")) {
                 $("#right-col").show("slide", {direction: "right"});
                 $("#middle-col").animate({"width": "-=500"});
             }
-            
+
             loadMemberDetails($(this).find('input:checkbox:first').val(), false);
         }
     });
-    
+
     $("#select_all").on("click", function() {
         var all = $(this);
         $("input:checkbox").each(function() {
@@ -64,43 +64,43 @@ $(document).ready(function() {
             }
         });
     });
-    
+
     $("#hide-detail").click(function() {
         $("#right-col").hide("slide", {direction: "right"});
         $("#middle-col").animate({"width": "+=500"});
     })
-    
+
     $(".tab").click(function() {
         var currCenter = map.getCenter();
-        
+
         $(".tab").each(function() {
             $(this).removeClass('active');
         });
-        
+
         $(this).addClass("active");
-        
+
         $("#member-detail").children().addClass('hide');
-        
+
         if ($(this).hasClass("personal-tab")) {
             $("#personal-tab").removeClass('hide');
         }
-        
+
         if ($(this).hasClass("family-tab")) {
             $("#family-tab").removeClass('hide');
         }
-        
+
         if ($(this).hasClass("map-tab")) {
             $("#map-tab").removeClass('hide');
         }
-        
+
         google.maps.event.trigger(map, "resize");
         map.setCenter(currCenter);
     });
 
     $("#remove").click(function() {
         var selected = $("input[name='selected']:checked");
-        
-        if (selected.length <= 0) { 
+
+        if (selected.length <= 0) {
             alert("Please select the members to be removed.")
         } else {
             if (confirm("Are you sure to remove the selected members?")) {
@@ -108,21 +108,21 @@ $(document).ready(function() {
             }
         }
     });
-    
+
     $("#calc-route").click(function() {
         generateRoute($("#member-address").val());
     });
-    
+
     $("#search-by-name").click(function() {
         var query = $("input[name='query']").val();
-        
+
         $.post('/disciples/ajax/search-member/', {name: query, list: 1}, function(response) {
             if (response.success) {
                 showSelectedRows(response.searchResult);
             }
         }, "json");
     });
-    
+
     $(".options").change(function() {
         var data = {
             'duty' : $("select[name='duty-filter']").val(),
@@ -132,20 +132,20 @@ $(document).ready(function() {
             'gender' : $("select[name='gender-filter']").val(),
             'active' : $("select[name='active-filter']").val()
         };
-        
+
         $.post('/disciples/ajax/filter-member/', {data: data}, function(response) {
             if (response.success) {
                 showSelectedRows(response.filterResult);
             }
         }, "json");
     });
-    
+
     $("#filter-reset").click(function() {
         showSelectedRows('reset');
-        
+
         $("#select-group").find('select').each(function() {
             var options = $(this).find('option');
-            
+
             options.each(function() {
             	if ($(this).val() == '-1') {
             		$(this).prop('selected', true);
@@ -157,17 +157,17 @@ $(document).ready(function() {
 
 function loadMemberDetails(id, reload) {
 	var data = {id: id, reload: 0}
-	
+
 	if (reload) {
 		data.reload = 1;
 	}
-	
+
     $.post('/disciples/ajax/load-member-details/', data, function(response) {
         if (response.success) {
             $("#personal-tab").html(response.personalInfo);
-            $("#family-tab").html(response.familyInfo);                        
+            $("#family-tab").html(response.familyInfo);
             codeAddress(response.address, response.name);
-            $("#member-address").val(response.address);            
+            $("#member-address").val(response.address);
             $(".show-member-form").on("click", function() {
                 $("#static").hide();
                 $("#modify").show("slide", {direction: "right"});
@@ -180,10 +180,10 @@ function loadMemberDetails(id, reload) {
                 $("#modify").hide();
                 $("#static").show("slide", {direction: "left"});
             });
-            $(".submit-modify").on("click", updateMember);            
-            $(".bap_radio").on("click", function() {    
+            $(".submit-modify").on("click", updateMember);
+            $(".bap_radio").on("click", function() {
                 if ($(this).val() == 1) {
-                    $(this).parent().find(".baptized_on").show(500);            
+                    $(this).parent().find(".baptized_on").show(500);
                 } else {
                     $(this).parent().find(".baptized_on").hide(500);
                 }
@@ -206,28 +206,28 @@ function bindButtons() {
 
     // bind a click event for the "Add Family Member" button on the new member overlay
     $("#add-member").on("click", addRow);
-    
+
     // bind show/hide event for "세례" radio button on the new member overlay
-    $("input[name='baptized']").on("click", function() {    
+    $("input[name='baptized']").on("click", function() {
         if ($(this).val() == 1) {
-            $(this).parent().find(".baptized_on").show(500);            
+            $(this).parent().find(".baptized_on").show(500);
         } else {
             $(this).parent().find(".baptized_on").hide(500);
         }
     });
-    
+
     // bind a click event for "search" button on the "add family member" overlay
     $("#search").on("click", searchMember);
-    
+
     // bind a click event for "add member" button on the "add family member" overlay
     $("#add-family-member").on("click", addFamilyMember);
-    
+
     // bind a click event for "apply" button on the "change family information" overlay
     $("#change-family-info").on("click", changeFamilyInfo);
-    
+
     // bind a click event for "upload" button on the "change photo" overlay
     $("#upload-photo").on("click", uploadPhoto);
-    
+
     // bind a change event for choose file action on the "change photo" overlay
     fileAction();
 }
@@ -246,33 +246,43 @@ function registerMember() {
             birth_day : $("select[name='birth_day']").val(),
             birth_year : $("select[name='birth_year']").val(),
             birth_lunar : $("input[name='birth_lunar']:checked").val(),
-            baptized : $("input[name='baptized']:checked").val(),            
+            cell : $("input[name='cell']").val(),
+            cell_leader : $("input[name='cell_leader']").is(':checked') ? 1 : 0,
+            cell_co_leader : $("input[name='cell_co_leader']").is(':checked') ? 1 : 0,
+            duty : $("select[name='duty']").val(),
             home_phone : $("input[name='home_phone']").val(),
             mobile_phone : $("input[name='mobile_phone']").val(),
-            business_phone : $("input[name='business_phone']").val(),
             active : $("input[name='active']:checked").val(),
-            duty : $("select[name='duty']").val(),
+            business_phone : $("input[name='business_phone']").val(),
             registered_on : $("input[name='registered_on']").val(),
             marital_status : $("select[name='marital_status']").val(),
+            business_name : $("input[name='business_name']").val(),
+            baptized : $("input[name='baptized']:checked").val(),
             street : $("input[name='street']").val(),
             city : $("input[name='city']").val(),
             state : $("select[name='state']").val(),
             zip : $("input[name='zip']").val()
         };
-        
+
         if (data.baptized == 1) {
             data.baptized_on = $("input[name='baptized_on']").val();
         }
-        
+
+        data.nurture = [];
+
+        $("input[name='nurture']:checked").each(function() {
+            data.nurture.push($(this).val());
+        });
+
         $("#family-member").find('tr').each(function() {
             numFamily++;
         });
-        
+
         data.numFamily = numFamily - 1;
-        
+
         if (numFamily > 1) {
             data.family = {};
-            for (var i = 1; i < numFamily; i++) {                
+            for (var i = 1; i < numFamily; i++) {
                 data.family[i] = {
                     name : $("input[name='name-" + i + "']").val(),
                     e_last : $("input[name='e_last-" + i + "']").val(),
@@ -288,7 +298,7 @@ function registerMember() {
                 };
             }
         }
-            
+
         $.post('/disciples/ajax/register-member', data, function(response) {
             if (response.success) {
                 window.location.href = '/disciples/manage/reload';
@@ -327,11 +337,11 @@ function updateMember() {
         state : $("select[name='state_" + memberId + "']").val(),
         zip : $("input[name='zip_" + memberId + "']").val()
     };
-    
+
     if (data.baptized == 1) {
         data.baptized_on = $("input[name='baptized_on_" + memberId + "']").val();
     }
-    
+
     $.post('/disciples/ajax/update-member', data, function(response) {
         if (response.success) {
             window.location.href = '/disciples/manage/reload';
@@ -345,7 +355,7 @@ function addFamilyMember() {
     var member_id = $("input[name='memberId']").val();
     var f_member_id = $("input[name='family-member-id']").val();
     $("p.search-error").html('');
-    
+
     if (member_id == f_member_id) {
         $("p.search-error").html('Can\'t add himself or herself as a family member');
     } else {
@@ -354,7 +364,7 @@ function addFamilyMember() {
             new_id: f_member_id,
             relation: $("select[name='relation']").val()
         };
-        
+
         $.post('/disciples/ajax/add-family-member', data, function(response) {
             if (response.success) {
                 loadMemberDetails(member_id, false);
@@ -372,24 +382,23 @@ function changeFamilyInfo() {
     var head_of_house = $("input[name='head_of_house']:checked").val();
     var relation = {};
     var remove = [];
-    
+
     $("input[name='head_of_house']").each(function() {
         var id = $(this).val();
         relation[id] = $("select[name='relation_" + id + "']").val();
     });
-    
+
     $("input[name='remove_member']:checked").each(function() {
         remove.push($(this).val());
     });
-    
+
     var data = {
         familyId: familyId,
         head_of_house: head_of_house,
         relation: relation,
         remove: remove
     };
-    
-    
+
     if (confirm("Are you sure to make the changes for this family?")) {
         $.post('/disciples/ajax/change-family-info', data, function(response) {
             if (response.success) {
@@ -403,37 +412,19 @@ function changeFamilyInfo() {
 function validateForm() {
     var errorMessage = '';
     var numFamily = 0;
-    
+
     if ($("input[name='name']").val() == '') {
         errorMessage += '한글 이름\n';
     }
-    
-    if ($("select[name='birth_month']").val() == 0 ||
-        $("select[name='birth_day']").val() == 0 ||
-        $("select[name='birth_year']").val() == 0) {
-        errorMessage += '생년월일\n';
-    }
-    
-    if ($("input[name='street']").val() == '' ||
-        $("input[name='city']").val() == ''    ||
-        $("input[name='zip']").val() == '') {
-        errorMessage += '주소\n';
-    }
-        
+
     $("#family-member").find('tr').each(function() {
         numFamily++;
     });
-    
+
     if (numFamily > 1) {
         for (var i = 1; i < numFamily; i++) {
             if ($("input[name='name-" + i + "']").val() == '') {
                 errorMessage += '가족 한글 이름\n';
-            }
-        
-            if ($("select[name='birth_month-" + i + "']").val() == 0 ||
-                $("select[name='birth_day-" + i + "']").val() == 0 ||
-                $("select[name='birth_year-" + i + "']").val() == 0) {
-                errorMessage += '가족 생년월일\n';
             }
         }
     }
@@ -450,11 +441,11 @@ function addRow() {
     var numRow = 0;
     var row = '';
     var relations = '';
-    
+
     $("#family-member").find('tr').each(function() {
         numRow++;
     });
-        
+
     $.post('/disciples/ajax/get-family-relation/', {id: 0}, function(response) {
         if (response.success) {
             relations = response.relations;
@@ -476,37 +467,37 @@ function addRow() {
 
 function getDateOptions(numRow) {
     var monthSelect = '<select name="birth_month-' + numRow + '" class="month" value="0"><option>mm</option>';
-                     
+
     for (var i = 1; i <= 12; i++) {
         monthSelect = monthSelect + '<option value="' + i + '">' + i + '</option>';
     }
-    
+
     monthSelect = monthSelect + '</select>';
-    
+
     var daySelect = '<select name="birth_day-' + numRow + '" class="day"><option value="0">dd</option>';
-     
+
     for (var i = 1; i <= 31; i++) {
         daySelect = daySelect + '<option value="' + i + '">' + i + '</option>';
     }
-    
+
     daySelect = daySelect + '</select>';
-    
+
     var yearSelect = '<select name="birth_year-' + numRow + '" class="year"><option value="0">yyyy</option>';
     var date = new Date();
     var thisYear = date.getFullYear();
     var endYear = thisYear - 110;
-     
+
     for (var i = thisYear; i > endYear; i--) {
         yearSelect = yearSelect + '<option value="' + i + '">' + i + '</option>';
     }
-    
+
     yearSelect = yearSelect + '</select>';
-    
+
     var lunarSelect = '<select name="birth_lunar-' + numRow + '" class="lunar">'
                     + '<option value="0">양</option>'
                     + '<option value="1">음</option>'
                     + '</select>';
-    
+
     return monthSelect + daySelect + yearSelect + lunarSelect;
 }
 
@@ -514,8 +505,8 @@ function removeMember(selected) {
     var data = [];
     $.each(selected, function() {
         data.push($(this).val());
-    });    
-    
+    });
+
     $.post('/disciples/ajax/remove-member/', {data: data}, function(response) {
         if (response.success) {
             window.location.href = '/disciples/manage/reload';
@@ -525,7 +516,7 @@ function removeMember(selected) {
 
 function searchMember() {
     var query = $("input[name='q_name']").val();
-    
+
     $.post('/disciples/ajax/search-member/', {name: query}, function(response) {
         if (response.success) {
             $("#search_result").html(response.searchResult);
@@ -536,18 +527,18 @@ function searchMember() {
 function showSelectedRows(list) {
     // show all rows first
     $("#list").children().find('tr').show();
-    
+
     // de-select the all checkbox
     $("input:checkbox").each(function() {
         $(this).prop("checked", false);
     });
-    
+
     if (list != 'reset') {
         $("#list").children().find('tr').each(function() {
             if (typeof $(this).attr('id') != 'undefined') {
                 var id_str = $(this).attr('id').split('_');
                 var id = id_str[1];
-                
+
                 if ($.inArray(id, list) == -1) {
                     $(this).hide();
                 }
@@ -559,8 +550,8 @@ function showSelectedRows(list) {
 function uploadPhoto() {
 	var formData = new FormData($("form[name='upload']")[0]);
 	var id = $("input[name='id']").val();
-	
-	console.log(formData);	
+
+	console.log(formData);
     $.ajax({
         type: 'POST',
         url: '/disciples/ajax/upload-photo',

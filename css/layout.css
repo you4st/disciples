@@ -1405,7 +1405,7 @@ div.new-member table {
 div.new-member input {
     width: 170px;
 }
-div.new-member input[type="radio"] {
+div.new-member input[type="radio"], div.new-member input[type="checkbox"] {
     width: 15px;
 }
 div.new-member select {
@@ -1418,7 +1418,7 @@ div.new-member select.month {
 	width: 60px;
 }
 div.new-member select.year {
-    width: 70px;
+    width: 60px;
 }
 div.new-member select.lunar {
     width: 50px;
@@ -1432,11 +1432,14 @@ div.new-member label {
 div.new-member input.mid {
 	width: 78px;
 }
+div.new-member input.cell {
+    width: 28px;
+}
 div.new-member table.address {
-	margin: 5px 0 0 0;   
+	margin: 5px 0 0 0;
 	width: 400px;
 }
-div.new-member table.address td{	
+div.new-member table.address td {
 	border: none;
 	padding: 0 10px 5px 0;
 }
@@ -1620,7 +1623,7 @@ div#calendar {
 
 /* left-col */
 div#left-col hr {
-	clear: both;    
+	clear: both;
     height: 2px;
     margin: 15px 10px;
 	border: none;
@@ -1657,17 +1660,17 @@ div.filters select {
 /* photo */
 div#photo {
 	width: 128px;
-	height: 158px;	
+	height: 158px;
 	position: absolute;
 	right: 30px;
 }
-div#photo img {    
+div#photo img {
 	width: 128px;
-    height: 128px;  
+    height: 128px;
     border: 2px solid #808A85;
     background-color:#fff;
 }
-div#photo span {    
+div#photo span {
     margin: 5px 0 0 30px;
 }
 
