@@ -1293,7 +1293,7 @@ div#left-nav img {
 .button-long {
 	width:110px;
 }
-span#add-member {
+span#add-member, span#remove-line {
 	font-size: 10px;
     font-weight: normal;
     font-style: normal;
