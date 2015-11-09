@@ -7,6 +7,9 @@ $(document).ready(function() {
     // for map
     initialize();
 
+    // load the relation data
+    var relations = loadRelations();
+
     // refresh the page when resizing the window
     $(window).on('resize', function() {
         location.reload();
@@ -206,6 +209,9 @@ function bindButtons() {
 
     // bind a click event for the "Add Family Member" button on the new member overlay
     $("#add-member").on("click", addRow);
+
+    // bind a click event for the "Remove Line" button on the new member overlay
+    $("#remove-line").on("click", deleteRow);
 
     // bind show/hide event for "세례" radio button on the new member overlay
     $("input[name='baptized']").on("click", function() {
@@ -437,32 +443,46 @@ function validateForm() {
     }
 }
 
+function loadRelations() {
+	$.post('/disciples/ajax/get-family-relation/', {id: 0}, function(response) {
+        if (response.success) {
+            relations = response.relations;
+        }
+	});
+}
+
 function addRow() {
     var numRow = 0;
     var row = '';
-    var relations = '';
 
     $("#family-member").find('tr').each(function() {
         numRow++;
     });
 
-    $.post('/disciples/ajax/get-family-relation/', {id: 0}, function(response) {
-        if (response.success) {
-            relations = response.relations;
-            row = '<tr>'
-                + '<td><input type="text" name="name-' + numRow + '"></td>'
-                + '<td><input type="text" name="e_last-' + numRow + '"></td>'
-                + '<td><input type="text" name="e_first-' + numRow + '"></td>'
-                + '<td><input type="radio" name="gender-' + numRow + '" value="M" checked="checked">남<input type="radio" name="gender-' + numRow + '" value="F">여</td>'
-                + '<td><select name="relation-' + numRow + '">' + relations + '</select></td>'
-                + '<td>' + getDateOptions(numRow) + '</td>'
-                + '<td><input type="text" name="mobile_phone-' + numRow + '"></td>'
-                + '<td><input type="text" class="email" name="email-' + numRow + '"></td>'
-                + '</tr>';
+    row = '<tr id="member_' + numRow + '">'
+        + '<td><input type="text" name="name-' + numRow + '"></td>'
+        + '<td><input type="text" name="e_last-' + numRow + '"></td>'
+        + '<td><input type="text" name="e_first-' + numRow + '"></td>'
+        + '<td><input type="radio" name="gender-' + numRow + '" value="M" checked="checked">남<input type="radio" name="gender-' + numRow + '" value="F">여</td>'
+        + '<td><select name="relation-' + numRow + '">' + relations + '</select></td>'
+        + '<td>' + getDateOptions(numRow) + '</td>'
+        + '<td><input type="text" name="mobile_phone-' + numRow + '"></td>'
+        + '<td><input type="text" class="email" name="email-' + numRow + '"></td>'
+        + '</tr>';
 
-            $("#family-member").append(row);
-        }
-    }, "json");
+        $("#family-member").append(row);
+}
+
+function deleteRow() {
+    var numRow = 0;
+
+    $("#family-member").find('tr').each(function() {
+        numRow++;
+    });
+
+    if (numRow > 1) {
+        $("#member_" + (numRow - 1)).remove();
+    }
 }
 
 function getDateOptions(numRow) {

@@ -25,8 +25,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `course`
 --
-DROP DATABASE `DISCIPLES` IF EXISTS;
-CREATE DATABASE `DISCIPLES` IF NOT EXISTS;
+
 USE DISCIPLES;
 
 CREATE TABLE IF NOT EXISTS `course` (
