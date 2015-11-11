@@ -30,8 +30,8 @@ class Disciples_Model_Nurture extends Zend_Db_Table_Abstract
 		$nurtureList = array();
 
 		foreach ($courses as $course) {
-			$nurtureList[$course->id] = array(
-				'courseName' => $course->course_name,
+			$nurtureList[$course['id']] = array(
+				'courseName' => $course['course_name'],
 				'completed'   => false
 			);
 		}
