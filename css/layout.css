@@ -330,7 +330,6 @@ p {
 }
 ul {
     line-height: 18px;
-    margin-bottom: 15px;
 }
 ul li {
     margin-left: 15px;
@@ -1389,7 +1388,10 @@ div#member-detail {
 	margin: 0 20px 15px 20px;
 	background: #fb9e25;
 	width: 470px;
-	height: 650px;
+	height: 670px;
+}
+div#member-detail td {
+    padding: 5px 10px;
 }
 div#personal-tab, div#family-tab, div#map-tab, div#struct-tab {
 	padding: 15px 0 0 15px;
@@ -1449,7 +1451,7 @@ div.new-member table.address input.street {
 div.new-member table.address input.zip {
     width: 50px;
 }
-div.new-member span.baptized_on, div#modify span.baptized_on {
+div.new-member span.baptized_on {
 	padding-left: 20px;
 }
 div.section-title {
@@ -1493,9 +1495,15 @@ div#modify table td{
 	padding: 5px;
 }
 div#modify input {
-    width: 170px;
+    width: 100px;
+}
+div#modify input#cell {
+    width: 20px;
 }
 div#modify input[type="radio"] {
+    width: 15px;
+}
+div#modify input[type="checkbox"] {
     width: 15px;
 }
 div#modify select {

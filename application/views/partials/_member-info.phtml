@@ -4,16 +4,22 @@
     $age = (date("md", date("U", mktime(0, 0, 0, $this->birth_month, $this->birth_day, $this->birth_year))) > date("md")
             ? ((date("Y") - $this->birth_year) - 1)
             : (date("Y") - $this->birth_year));
-    
+
     if ($this->birth_lunar) {
         $birthDate .= ' (음력)';
     } else {
         $birthDate .= ' (양력)';
     }
-    
+
     $address = $this->street . '<br>' . $this->city . ', ' . $this->state . ' ' . $this->zip;
-    $registered_on = $this->registered_on && $this->registered_on != '0000-00-00' ? substr($this->registered_on, 0, 4) . '년 ' . substr($this->registered_on, 5, 2) . '월 ' . substr($this->registered_on, -2) . '일' : '무등록';
     $photo = $this->photo ? '/disciples/upload/' . $this->photo : '/disciples/images/icons/member.jpg';
+    $cell_info = $this->cell;
+
+    if ($this->cell_leader) {
+    	$cell_info .= ' (목자)';
+    } else if ($this->cell_co_leader) {
+    	$cell_info .= ' (부목자)';
+    }
 ?>
 <div id="static">
     <div id="photo">
@@ -30,6 +36,10 @@
         <tr>
             <td align="right">영문이름:</td>
             <td><b><?php echo $e_name; ?></b></td>
+        </tr>
+        <tr>
+            <td align="right">목장:</td>
+            <td><?php echo $cell_info; ?></td>
         </tr>
         <tr>
             <td align="right">성별:</td>
@@ -64,21 +74,25 @@
             <td><?php echo $this->business_phone ? '(' . substr($this->business_phone, 0, 3) . ') ' . substr($this->business_phone, 3, 3) . '-' . substr($this->business_phone, -4) : ''; ?></td>
         </tr>
         <tr>
+            <td align="right">비지니스 이름:</td>
+            <td><?php echo $this->business_name; ?></td>
+        </tr>
+        <tr>
             <td align="right">Email:</td>
             <td><?php echo $this->email; ?></td>
         </tr>
         <tr>
-            <td align="right">등록일:</td>
-            <td><?php echo $registered_on; ?></td>
+            <td align="right">등록년:</td>
+            <td><?php echo $this->registered_on; ?></td>
         </tr>
         <tr>
             <td align="right">세례:</td>
             <td><?php echo $this->baptized ? '받음' : '안받음'; ?></td>
         </tr>
-        <?php if ($this->baptized && $this->baptized_on && $this->baptized_on != '0000-00-00') { ?>
+        <?php if ($this->baptized && !empty($this->baptized_on)) { ?>
         <tr>
             <td align="right">세례일:</td>
-            <td><?php echo substr($this->baptized_on, 0, 4) . '년 ' . substr($this->baptized_on, 5, 2) . '월 ' . substr($this->baptized_on, -2) . '일'; ?></td>
+            <td><?php echo $this->baptized_on; ?></td>
         </tr>
         <?php } ?>
         <tr>
@@ -90,12 +104,16 @@
             <td><?php echo $this->active ? '활성' : '비활성'; ?></td>
         </tr>
         <tr>
+            <td align="right">양육 수료:</td>
+            <td><?php echo $this->nurture; ?></td>
+        </tr>
+        <tr>
             <td align="right">수정일:</td>
             <td><?php echo $this->last_updated_on; ?></td>
         </tr>
         <?php if ($this->isAdmin) { ?>
         <tr>
-            <td colspan="2" align="center"><span class="button-light show-member-form">수정</span></td>
+            <td colspan="2" align="right"><span class="button-light show-member-form">수정</span></td>
         </tr>
         <?php } ?>
     </table>    
@@ -108,10 +126,16 @@
         <tr>
             <td width="65" align="right">이름:</td>
             <td><input type="text" name="name_<?php echo $this->id; ?>" value="<?php echo $this->name; ?>" /></td>
+            <td width="50" align="right">목장:</td>
+            <td>
+                <input id="cell" type="text" name="cell_<?php echo $this->id; ?>" value="<?php echo $this->cell; ?>" />
+                <input type="checkbox" name="cell_leader_<?php echo $this->id; ?>" value="1" id="cell_leader" <?php echo $this->cell_leader ? 'checked="checked"' : ''; ?> /><label for="cell_leader">목자</label>
+                <input type="checkbox" name="cell_co_leader_<?php echo $this->id; ?>" value="1" id="cell_co_leader" <?php echo $this->cell_co_leader ? 'checked="checked"' : ''; ?> /><label for="cell_co_leader">부목자</label>
+            </td>
         </tr>
         <tr>
             <td align="right">영문이름:</td>
-            <td>
+            <td colspan="3">
                 <table id="e-name">
                     <tr>
                         <td>First</td>
@@ -127,6 +151,13 @@
             </td>
         </tr>
         <tr>
+            <td align="right">직분:</td>
+            <td>
+                <select name="duty_<?php echo $this->id; ?>">
+                    <option value="0">--</option>          
+                    <?php echo $this->dutyOptions; ?>
+                </select>
+            </td>
             <td align="right">성별:</td>
             <td>
                 <input type="radio" name="gender_<?php echo $this->id; ?>" value="M" <?php echo $this->gender == 'M' ? 'checked="checked"' : '';?> id="m_men" /><label for="m_men">남</label>
@@ -134,16 +165,8 @@
             </td>
         </tr>
         <tr>
-            <td align="right">직분:</td>
-            <td><select name="duty_<?php echo $this->id; ?>">
-                    <option value="0">--</option>          
-                       <?php echo $this->dutyOptions; ?>
-                </select>
-            </td>
-        </tr>
-        <tr>
             <td align="right">생년월일:</td>
-            <td>
+            <td colspan="3">
                 <select name="birth_month_<?php echo $this->id; ?>" class="month">
                     <option value="0">month</option>
                     <?php 
@@ -180,7 +203,7 @@
         </tr>        
         <tr>
             <td align="right">집주소:</td>
-            <td>
+            <td colspan="3">
                 <table class="address">
                     <tr>
                         <td colspan="3">Street</td>
@@ -208,23 +231,21 @@
         <tr>
             <td align="right">집전화 #:</td>
             <td><input name="home_phone_<?php echo $this->id; ?>" type="text" value="<?php echo $this->home_phone; ?>" /></td>
-        </tr>
-        <tr>
             <td align="right">모바일 #:</td>
             <td><input name="mobile_phone_<?php echo $this->id; ?>" type="text" value="<?php echo $this->mobile_phone; ?>" /></td>
         </tr>
         <tr>
             <td align="right">비지니스 #:</td>
             <td><input name="business_phone_<?php echo $this->id; ?>" type="text" value="<?php echo $this->business_phone; ?>" /></td>
+            <td align="right">비지니스 이름:</td>
+            <td><input name="business_name_<?php echo $this->id; ?>" type="text" value="<?php echo $this->business_name; ?>" /></td>
         </tr>
         <tr>
             <td align="right">Email:</td>
             <td><input name="email_<?php echo $this->id; ?>" type="text" value="<?php echo $this->email; ?>" /></td>
-        </tr>
-        <tr>
-            <td align="right">등록일:</td>
+            <td align="right">등록년:</td>
             <td>
-                <input type="text" name="registered_on_<?php echo $this->id; ?>" value="<?php echo $this->registered_on != '0000-00-00' ? $this->registered_on : ''; ?>" />    (yyyy-mm-dd)        
+                <input type="text" name="registered_on_<?php echo $this->id; ?>" value="<?php echo $this->registered_on != '0000-00-00' ? $this->registered_on : ''; ?>" />
             </td>
         </tr>
         <tr>
@@ -232,7 +253,12 @@
             <td>
                 <input type="radio" class="bap_radio" name="baptized_<?php echo $this->id; ?>" value="1" id="m_baped" <?php echo $this->baptized ? 'checked="checked"' : ''; ?> /><label for="m_baped">받음</label>
                 <input type="radio" class="bap_radio" name="baptized_<?php echo $this->id; ?>" value="0" id="m_nobaped" <?php echo $this->baptized ? '' : 'checked="checked"'; ?> /><label for="m_nobaped">안받음</label>
-                <span class="baptized_on<?php echo $this->baptized ? '' : ' hide';?>">세례일: <input type="text" class="mid" name="baptized_on__<?php echo $this->id; ?>" value="<?php echo $this->baptized_on != '0000-00-00' ? $this->baptized_on : ''; ?>" /> (yyyy-mm-dd)</span>
+            </td>
+            <td align="right">    
+                <span class="baptized_on<?php echo $this->baptized ? '' : ' hide';?>">세례일:</span>
+            </td>
+            <td>
+                <span class="baptized_on<?php echo $this->baptized ? '' : ' hide';?>"><input type="text" name="baptized_on_<?php echo $this->id; ?>" value="<?php echo $this->baptized_on; ?>" /></span>
             </td>
         </tr>
         <tr>
@@ -242,12 +268,16 @@
                     <?php echo $this->maritalOptions; ?>
                 </select>
             </td>
-        </tr>
-        <tr>
             <td align="right">상태:</td>
             <td>
                 <input type="radio" name="active_<?php echo $this->id; ?>" value="1" id="m_active" <?php echo $this->active ? 'checked="checked"' : ''; ?> /><label for="m_active">활성</label>
                 <input type="radio" name="active_<?php echo $this->id; ?>" value="0" id="m_inactive" <?php echo $this->active ? '' : 'checked="checked"'; ?> /><label for="m_inactive">비활성</label>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">양육:</td>
+            <td colspan="3">
+                <?php echo $this->nurtureOptions; ?>
             </td>
         </tr>
     </table>

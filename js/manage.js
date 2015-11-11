@@ -330,6 +330,9 @@ function updateMember() {
         birth_day : $("select[name='birth_day_" + memberId + "']").val(),
         birth_year : $("select[name='birth_year_" + memberId + "']").val(),
         birth_lunar : $("input[name='birth_lunar_" + memberId + "']:checked").val(),
+        cell : $("input[name='cell_" + memberId + "']").val(),
+        cell_leader : $("input[name='cell_leader_" + memberId + "']").is(':checked') ? 1 : 0,
+        cell_co_leader : $("input[name='cell_co_leader_" + memberId + "']").is(':checked') ? 1 : 0,
         baptized : $("input[name='baptized_" + memberId + "']:checked").val(),
         home_phone : $("input[name='home_phone_" + memberId + "']").val(),
         mobile_phone : $("input[name='mobile_phone_" + memberId + "']").val(),
@@ -338,6 +341,7 @@ function updateMember() {
         duty : $("select[name='duty_" + memberId + "']").val(),
         registered_on : $("input[name='registered_on_" + memberId + "']").val(),
         marital_status : $("select[name='marital_status_" + memberId + "']").val(),
+        business_name : $("input[name='business_name_" + memberId + "']").val(),
         street : $("input[name='street_" + memberId + "']").val(),
         city : $("input[name='city_" + memberId + "']").val(),
         state : $("select[name='state_" + memberId + "']").val(),
@@ -347,6 +351,12 @@ function updateMember() {
     if (data.baptized == 1) {
         data.baptized_on = $("input[name='baptized_on_" + memberId + "']").val();
     }
+
+    data.nurture = [];
+
+    $("input[name='nurture_" + memberId + "']:checked").each(function() {
+        data.nurture.push($(this).val());
+    });
 
     $.post('/disciples/ajax/update-member', data, function(response) {
         if (response.success) {

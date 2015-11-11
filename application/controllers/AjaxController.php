@@ -55,6 +55,8 @@ class AjaxController extends Zend_Controller_Action
                         
             $personal = $this->_loadMemberInfo($id, $reload);
             $personal['isAdmin'] = $this->_user->isAdmin();
+            $personal['nurture'] = $this->_getNurtureListById($id);
+            $personal['nurtureOptions'] = $this->_getNurtureOptions($id);
             $family = $this->_loadFamilyInfo($id);
             
             // general tab
@@ -182,10 +184,12 @@ class AjaxController extends Zend_Controller_Action
         if ($this->_request->isXmlHttpRequest()) {
             try {
                 $data = $this->_request->getParams();
-
+                $nurture = $data['nurture'];
+                
                 unset($data['controller']);
                 unset($data['action']);
                 unset($data['module']);
+                unset($data['nurture']);
 
                 if ($data['duty'] == '0') {
                     unset($data['duty']);
@@ -200,6 +204,12 @@ class AjaxController extends Zend_Controller_Action
 
                 $individual = new Disciples_Model_Individual();
                 $individual->updateMember($data);
+
+                // update nurture
+                if (!empty($nurture)) {
+                	$nurtureModel = new Disciples_Model_Nurture();
+                	$nurtureModel->updateNurtureInfo($data['id'], $nurture);
+                }
 
                 $this->_helper->json(array('success' => 1));
             } catch (Exception $ex) {
@@ -564,7 +574,7 @@ class AjaxController extends Zend_Controller_Action
 
             foreach ($nurtureList as $courseId => $data) {
                 $checked = $data['completed'] ? ' checked="checked"' : '';
-                $list = $list . '<input type="checkbox" name="nurture" value="' . $courseId . '"' . $checked . ' />' . $data['courseName'];
+                $list = $list . '<input type="checkbox" name="nurture_' . $id . '" value="' . $courseId . '"' . $checked . ' />' . $data['courseName'] . '<br>';
             }
         } else {
             $course = new Disciples_Model_Course();
@@ -575,6 +585,26 @@ class AjaxController extends Zend_Controller_Action
         }
 
         return $list;
+    }
+    
+    private function _getNurtureListById($id)
+    {
+    	$list = '<ul>';
+    
+    	if ($id > 0) {
+    		$nurtureModel = new Disciples_Model_Nurture();
+    		$nurtureList = $nurtureModel->getNurtureListByMemberId($id);
+
+    		foreach ($nurtureList as $courseId => $data) {
+    			if ($data['completed']) {
+    				$list .= '<li>' . $data['courseName'] . '</li>';
+    			}
+    		}
+    	}
+
+    	$list .= '</ul>';
+
+    	return $list;
     }
 
     private function _getRelationOptions($id = 0)
