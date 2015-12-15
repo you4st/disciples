@@ -661,4 +661,19 @@ class AjaxController extends Zend_Controller_Action
 
     	return $filename;
     }
+
+    public function updateDutiesAction()
+    {
+        if ($this->_request->isXmlHttpRequest()) {
+            $dutyOptions = $this->_request->getParam('data');
+
+            $duty = new Disciples_Model_Duty();
+            $duty->updateDutyOptions($dutyOptions);
+
+            $this->_helper->json(array(
+                'success' => 0,
+                'message' => 'There a problem while updating duty options. Please try again...'
+            ));
+        }
+    }
 }

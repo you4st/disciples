@@ -99,5 +99,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $controller = Zend_Controller_Front::getInstance();
         $controller->registerPlugin(new Zend_Controller_Plugin_ErrorHandler());
         $controller->registerPlugin(new Disciples_Controller_Plugin_Authenticator());
+        $controller->registerPlugin(new Disciples_Controller_Plugin_Device());
     }
 }

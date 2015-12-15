@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	bindActions();
-	
+
 	$("#new-duty").click(function() {
 		var numRow = 0;
 	    var relations = '';
@@ -12,7 +12,8 @@ $(document).ready(function() {
 	    var row = $('<tr id="' + (numRow - 1) + '"></tr>');
 	    
 	    row.html('<td><div class="duty-old hide"></div><div class="duty-new"><input type="text" name="duty_name" /><span class="button-light change">변경</span></div></td>'
-	             + '<td><a class="down">move down</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a class="up">move up</a></td>');
+                 + '<td align="center"><a class="down">move down</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a class="up">move up</a></td>'
+                 + '<td align="center"><input type="checkbox" name="remove" value="1"></td>');
 
 	    row.insertBefore($(this).closest('tr'));
 	    
@@ -26,14 +27,26 @@ $(document).ready(function() {
 		$("#duty-table").find('tr').each(function() {
 			
 			if ($(this).attr('id').length > 0) {
-				var duty = {id: $(this).attr('id'), duty_name: $(this).find('.duty-old').html(), display_priority: displayPriority++};
+				var duty = {
+                    id: $(this).attr('id'),
+                    duty_name: $(this).find('.duty-old').html(),
+                    display_priority: displayPriority++,
+                    remove: $(this).find('input[type="checkbox"]').is(':checked')
+                };
 				duties.push(duty);
 			}
 		});
-		
-		console.log(duties);
+
+        $("p.addition").html('');
+        $.post('/disciples/ajax/update-duties/', {data: duties}, function(response) {
+            if (response.success) {
+                window.location.href = '/disciples/admin';
+            } else {
+                $("p.addition").html(response.message);
+            }
+        }, "json");
 	});
-	
+
 	$("#cancel").click(function() {
 		window.location.href = '/disciples/admin';
 	});
@@ -44,6 +57,7 @@ bindActions = function() {
 	$(".change").unbind('click');
 	$(".down").unbind('click');
 	$(".up").unbind('click');
+    $("input[name='remove']").unbind('click');
 	
 	$(".duty-old").click(function() {
 		$(this).hide();
@@ -77,5 +91,13 @@ bindActions = function() {
 			tr.insertBefore(prev);
 		}
 	});
+
+    $("input[name='remove']").click(function() {
+        if ($(this).is(':checked')) {
+            if (!confirm("Are you sure to remove the selected duty option?")) {
+                $(this).attr('checked',false);
+            }
+        }
+    });
 }
 
