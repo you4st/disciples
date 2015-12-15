@@ -97,7 +97,7 @@ div#content {
     margin: 0 auto;
     padding: 0 22px 35px;
     margin-bottom: 64px;
-    background: url("/disciples/images/bgs/content-shadow.png") bottom center transparent no-repeat;
+    //background: url("/disciples/images/bgs/content-shadow.png") bottom center transparent no-repeat;
 }
 
 /*Header*/
@@ -1168,7 +1168,7 @@ div#middle-col {
     position: absolute;	
     left: 200px;	
 	overflow-x: scroll;
-    overflow-y: scroll;	
+    overflow-y: hidden;	
 	text-overflow: ellipsis;
 	margin: 0 12px 0 12px;
 }
