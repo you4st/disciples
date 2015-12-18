@@ -5,6 +5,6 @@ bin
 vendor
 .DS_Store
 disciples.iml
-logs
+logs/disciples.log
 .buildpath
 .settings

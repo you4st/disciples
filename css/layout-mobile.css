@@ -859,7 +859,8 @@ div#password-reset {
 }
 
 .second-box {
-    margin-top: 10px; !important;
+    margin-top: 10px;
+    margin-bottom: 45px;
     min-height: 200px;
 }
 
