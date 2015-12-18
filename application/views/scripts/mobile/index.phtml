@@ -3,16 +3,15 @@
 ?>
 <div class="inner-right">
     <input id="keyword" type="text" name="keyword" />
-    <button class="green-button" type="submit" name="search" value="search">
-        <span>이름 찾기</span>
-    </button>
-    <a id="show-all">전체보기</a>
+    <button class="button search" type="submit" name="search" value="search">이름찾기</button>
+    <button class="button-light show-all hide">전체보기</button>
 </div>
 
 <div class="inner-right second-box">
-    <table>
-        <tr>
-            <th>이름</th>
+    <p class="error hide">찾는 이름이 존재하지 않습니다.<br />정확한 이름을 확인하시고 다시 이름 찾기를 시도해 주세요.</p>
+    <table id="list">
+        <tr class="header">
+            <th style="width:40px;">이름</th>
             <th>Home</th>
             <th>Mobile</th>
             <th>상세</th>
@@ -36,7 +35,7 @@
                     $detail .= '주소: ' . $member['street'] . ', ' . $member['city'] . ', ' . $member['state'] . ' ' . $member['zip'];
                 }
 
-                echo '<tr>';
+                echo '<tr id="row_' . $member['id'] . '">';
                 echo '<td>' . $member['name'] . '</td>';
                 echo '<td class="center"><a href="tel:+1' . $member['home_phone'] . '">' . $member['home_phone'] . '</a></td>';
                 echo '<td class="center"><a href="tel:+1' . $member['mobile_phone'] . '">' . $member['mobile_phone'] . '</a></td>';
@@ -48,7 +47,7 @@
                 }
 
                 echo '</tr>';
-                echo '<tr class="hide" id="' . $member['id'] . '_detail">';
+                echo '<tr class="hide" id="detail_' . $member['id'] . '">';
                 echo '<td colspan="4" class="detail left">' . $detail . "</td>";
                 echo '</tr>';
             }
