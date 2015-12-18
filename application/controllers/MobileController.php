@@ -16,6 +16,7 @@ class MobileController extends Zend_Controller_Action
     public function indexAction()
     {
         $this->view->members = $this->_session->members;
+        $this->view->showError = $this->_request->getParam('error');
     }
 
     public function reloadAction()

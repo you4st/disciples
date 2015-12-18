@@ -22,38 +22,25 @@ $(document).ready(function() {
                         showRows(response.searchResult);
                         $('.show-all').show("slow");
                     } else {
-                        showAll();
-                        $(".error").show();
+                        showAll(1);
                     }
                 }
             }, "json");
         } else {
-            showAll();
-            $(".error").show();
+            showAll(1);
         }
     });
 
     $(".show-all").click(function() {
-        $(".error").hide();
-        showAll();
+        showAll(0);
     });
 
-    function showAll() {
-        $("#list").children().find('tr').hide();
-        $("#list").children().find('.header').show();
-        $("#list").children().find('tr').each(function() {
-            if (typeof $(this).attr('id') != 'undefined') {
-                var id_str = $(this).attr('id').split('_');
-
-                if (id_str[0] == 'row') {
-                    $(this).show("slow");
-                    $(this).children().find('.more').html('더보기');
-                }
-            } else {
-                $(this).show();
-            }
-        });
-        $(".show-all").hide();
+    function showAll(showError) {
+        if (showError) {
+            window.location.href = '/disciples/mobile/index/error/1';
+        } else {
+            window.location.href = '/disciples/mobile';
+        }
     }
 
     function hideAll() {
