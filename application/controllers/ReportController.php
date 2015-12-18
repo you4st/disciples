@@ -8,7 +8,11 @@ class ReportController extends Zend_Controller_Action
 		$this->view->isAdmin = $this->_user->isAdmin();
 		$this->_helper->layout->setLayout('index');
 
-		$this->_session = new Zend_Session_Namespace('DISCIPLES');		
+		$this->_session = new Zend_Session_Namespace('DISCIPLES');
+
+		if ($this->_session->device->isMobile) {
+			$this->_helper->redirector->gotoUrl('/mobile');
+		}
 	}
 
 	public function indexAction()

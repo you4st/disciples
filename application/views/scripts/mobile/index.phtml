@@ -1,0 +1,59 @@
+<?php
+    $this->headScript()->appendFile('/disciples/js/mobile.js');
+?>
+<div class="inner-right">
+    <input id="keyword" type="text" name="keyword" />
+    <button class="green-button" type="submit" name="search" value="search">
+        <span>이름 찾기</span>
+    </button>
+    <a id="show-all">전체보기</a>
+</div>
+
+<div class="inner-right second-box">
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>Home</th>
+            <th>Mobile</th>
+            <th>상세</th>
+        </tr>
+        <?php
+            foreach ($this->members as $member) {
+                $detail = '';
+                if (!empty($member['e_first'])) {
+                    $detail .= '영문이름: ' . $member['e_first'] . ' ' . $member['e_last'] . '<br />';
+                }
+                if (!empty($member['birth_year']) || !empty($member['birth_month']) || !empty($member['birth_day'])) {
+                    $detail .= '생년월일: ' . $member['birth_year'] . '년 ' . $member['birth_month'] . '월 ' . $member['birth_day'] . '일<br />';
+                }
+                if (!empty($member['email'])) {
+                    $detail .= '이메일: <a href="mailto:' . $member['email'] . '">' . $member['email'] . '</a><br />';
+                }
+                if (!empty($member['business_phone'])) {
+                    $detail .= '비지니스 전화번호: ' . $member['business_phone'] . '<br />';
+                }
+                if (!empty($member['street'])) {
+                    $detail .= '주소: ' . $member['street'] . ', ' . $member['city'] . ', ' . $member['state'] . ' ' . $member['zip'];
+                }
+
+                echo '<tr>';
+                echo '<td>' . $member['name'] . '</td>';
+                echo '<td class="center"><a href="tel:+1' . $member['home_phone'] . '">' . $member['home_phone'] . '</a></td>';
+                echo '<td class="center"><a href="tel:+1' . $member['mobile_phone'] . '">' . $member['mobile_phone'] . '</a></td>';
+
+                if (!empty($detail)) {
+                    echo '<td class="center"><a class="more" id="' . $member['id'] . '">더보기</a></td>';
+                } else {
+                    echo '<td>&nbsp;</td>';
+                }
+
+                echo '</tr>';
+                echo '<tr class="hide" id="' . $member['id'] . '_detail">';
+                echo '<td colspan="4" class="detail left">' . $detail . "</td>";
+                echo '</tr>';
+            }
+        ?>
+    </table>
+</div>
+
+<p>&nbsp;</p>

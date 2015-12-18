@@ -9,6 +9,11 @@ class ManageController extends Zend_Controller_Action
         $this->_helper->layout->setLayout('index-list');
 
         $this->_session = new Zend_Session_Namespace('DISCIPLES');
+
+        if ($this->_session->device->isMobile) {
+            $this->_helper->redirector->gotoUrl('/mobile');
+        }
+
         $this->_loadMembers();
     }
 

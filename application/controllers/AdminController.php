@@ -8,13 +8,17 @@ class AdminController extends Zend_Controller_Action
         $this->view->isAdmin = $this->_user->isAdmin();
         $this->_helper->layout->setLayout('index');
 
-        $this->_session = new Zend_Session_Namespace('DISCIPLES');        
+        $this->_session = new Zend_Session_Namespace('DISCIPLES');
+
+        if ($this->_session->device->isMobile) {
+            $this->_helper->redirector->gotoUrl('/mobile');
+        }
     }
 
     public function indexAction()
     {
     	//$this->_helper->mail->sendMail('sangwoo.han@sprint.com', 'test again', 'this is the test mail from Disciples.');
-    	
+
     }
     
     public function dutyAction()
