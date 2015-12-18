@@ -8,7 +8,7 @@ $(document).ready(function() {
             $(this).html('더보기');
         }
 
-        $('#' + id).toggle("slow");
+        $('#' + id).toggle();
     });
 
     $(".search").click(function() {
@@ -20,7 +20,7 @@ $(document).ready(function() {
                 if (response.success) {
                     if (response.searchResult.length > 0) {
                         showRows(response.searchResult);
-                        $('.show-all').show("slow");
+                        $('.show-all').show();
                     } else {
                         showAll(1);
                     }
@@ -58,7 +58,7 @@ $(document).ready(function() {
                 var id = id_str[1];
 
                 if ($.inArray(id, list) != -1) {
-                    $(this).show("slow");
+                    $(this).show();
                     $(this).children().find('.more').html('숨기기');
                 }
             }
