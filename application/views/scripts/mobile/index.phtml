@@ -8,7 +8,7 @@
 </div>
 
 <div class="inner-right second-box">
-    <p class="error hide">찾는 이름이 존재하지 않습니다.<br />정확한 이름을 확인하시고 다시 이름 찾기를 시도해 주세요.</p>
+    <p class="error<?php echo $this->showError ? '' : ' hide';?>">찾는 이름이 존재하지 않습니다.<br />정확한 이름을 확인하시고 다시 이름 찾기를 시도해 주세요.</p>
     <table id="list">
         <tr class="header">
             <th style="width:40px;">이름</th>
