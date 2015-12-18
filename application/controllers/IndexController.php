@@ -54,7 +54,11 @@ class IndexController extends Zend_Controller_Action
                 $result = $this->_user->login($postData['username'], $postData['password']);
 
                 if ($result->isValid()) {
-                    $this->_helper->redirector->gotoUrl('/');
+                    if ($this->_session->device->isMobile) {
+                        $this->_helper->redirector->gotoUrl('/mobile');
+                    } else {
+                        $this->_helper->redirector->gotoUrl('/');
+                    }
                 } else {
                     // Invalid login
                     $this->view->errorMessage = $this->view->partial('_errorMessage.phtml', array(

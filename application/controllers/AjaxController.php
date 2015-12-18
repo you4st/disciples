@@ -671,8 +671,7 @@ class AjaxController extends Zend_Controller_Action
             $duty->updateDutyOptions($dutyOptions);
 
             $this->_helper->json(array(
-                'success' => 0,
-                'message' => 'There a problem while updating duty options. Please try again...'
+                'success' => 1
             ));
         }
     }
